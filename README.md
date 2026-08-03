@@ -1,5 +1,8 @@
 # BUCKET.TXT
 
+
+<img width="700" height="394" alt="image" src="https://github.com/user-attachments/assets/1dd86582-21f1-4153-8a69-673cccc35d7e" />
+
 ## DISCLAIMER
 * CANNOT BE HELD LIABLE FOR YOU RUNNING THIS ON YOUR DEVICE AND BRICKING IT.
 * THIS SCRIPT CANNOT COMPLETELY REMOVE LOCATION TRACKING.  YOU HAVE BEEN WARNED.
@@ -28,4 +31,4 @@ https://github.com/FossifyOrg/Keyboard
 MINI BROWSER: 
 https://download.servo.org/nightly/android/servo-aarch64-android.apk
 
-<img width="700" height="394" alt="image" src="https://github.com/user-attachments/assets/1dd86582-21f1-4153-8a69-673cccc35d7e" />
+
