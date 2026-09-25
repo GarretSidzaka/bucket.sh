@@ -192,8 +192,8 @@ sleep 3
     curl -o /tmp/fosskeyboard.apk https://f-droid.org/repo/org.fossify.keyboard_14.apk
     adb install /tmp/fosskeyboard.apk
     echo 'Installing Servo Browser.'
-    curl -o /tmp/servo.apk https://download.servo.org/nightly/android/servo-aarch64-android.apk
-    adb install /tmp/servo.apk
+    curl -L -o /tmp/servo.apk https://download.servo.org/nightly/android/servo-aarch64-android.apk
+    adb install /tmp/servo.apk 
 
 
 
