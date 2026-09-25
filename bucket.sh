@@ -189,7 +189,7 @@ sleep 3
     curl -o /tmp/unlauncher.apk https://f-droid.org/repo/com.jkuester.unlauncher_18.apk
     adb install /tmp/unlauncher.apk
     echo 'Installing Foss keyboard.'
-    curl -o /tmp/fosskeyboard.apk https://github.com/FossifyOrg/Keyboard/releases/download/1.9.1/keyboard-14-foss-release.apk
+    curl -o /tmp/fosskeyboard.apk https://f-droid.org/repo/org.fossify.keyboard_14.apk
     adb install /tmp/fosskeyboard.apk
 
 
