@@ -194,7 +194,9 @@ sleep 3
     echo 'Installing Servo Browser.'
     curl -L -o /tmp/servo.apk https://download.servo.org/nightly/android/servo-aarch64-android.apk
     adb install /tmp/servo.apk 
-
+    echo 'Installing Waterfox Browser.'
+    curl -s -o /tmp/waterfox.apk https://api.github.com/repos/BrowserWorks/waterfox-android/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep arm64
+    adp install /tmp/servo.apk
 
 
    echo "============================"
