@@ -196,6 +196,11 @@ sleep 3
     waterfoxversion="$(curl -s https://api.github.com/repos/BrowserWorks/waterfox-android/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep arm64 | cut -d '/' -f 8)"
     curl -L -o /tmp/waterfox.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${waterfoxversion}"/fenix-waterfox-arm64-v8a-release.apk
     adp install /tmp/waterfox.apk
+    redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
+    curl -L -o /tmp/redreader.apk https://github.com/QuantumBadger/RedReader/releases/download/"${redreaderversion}"/RedReader-"${redreaderversion}".apk
+    adb install /tmp/redreader.apk
+    curl -o /tmp/tunderbird.apk https://f-droid.org/repo/net.thunderbird.android_32.apk
+    adb install /tmp/thunderbird.apk 
 
 
    echo "============================"
