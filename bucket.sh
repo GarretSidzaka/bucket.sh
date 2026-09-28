@@ -199,7 +199,7 @@ sleep 3
     redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
     curl -L -o /tmp/redreader.apk https://github.com/QuantumBadger/RedReader/releases/download/"${redreaderversion}"/RedReader-"${redreaderversion}".apk
     adb install /tmp/redreader.apk
-    curl -o /tmp/tunderbird.apk https://f-droid.org/repo/net.thunderbird.android_32.apk
+    curl -o /tmp/thunderbird.apk https://f-droid.org/repo/net.thunderbird.android_32.apk
     adb install /tmp/thunderbird.apk 
 
 
