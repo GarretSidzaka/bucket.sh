@@ -195,8 +195,9 @@ sleep 3
     curl -L -o /tmp/servo.apk https://download.servo.org/nightly/android/servo-aarch64-android.apk
     adb install /tmp/servo.apk 
     echo 'Installing Waterfox Browser.'
-    curl -s -o /tmp/waterfox.apk https://api.github.com/repos/BrowserWorks/waterfox-android/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep arm64
-    adp install /tmp/servo.apk
+    waterfoxversion="$(curl -s https://api.github.com/repos/BrowserWorks/waterfox-android/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep arm64 | cut -d '/' -f 8)"
+    curl -L -o /tmp/waterfox.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${waterfoxversion}"/fenix-waterfox-arm64-v8a-release.apk
+    adp install /tmp/waterfox.apk
 
 
    echo "============================"
