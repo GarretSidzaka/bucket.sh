@@ -156,16 +156,7 @@ command -v adb || {
 echo "adb not installed"
 exit 1
 }
-if [ "$1" == "-d" ]; then
-   echo "DEBUG MODE"
-   sleep 1
-   echo "============================"
-   echo "BEFORE:"
-   echo ""
-   sleep 1
-   adb shell pm list packages
-   sleep 1
-fi
+
 for i in "${target_package_list[@]}"; do
 echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
 adb shell pm uninstall -k --user 0 "$i"
@@ -196,17 +187,17 @@ sleep 3
     waterfoxversion="$(curl -s https://api.github.com/repos/BrowserWorks/waterfox-android/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep arm64 | cut -d '/' -f 8)"
     curl -L -o /tmp/waterfox.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${waterfoxversion}"/fenix-waterfox-arm64-v8a-release.apk
     adp install /tmp/waterfox.apk
+    echo 'Installing Redreader'
     redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
     curl -L -o /tmp/redreader.apk https://github.com/QuantumBadger/RedReader/releases/download/"${redreaderversion}"/RedReader-"${redreaderversion}".apk
     adb install /tmp/redreader.apk
-    curl -o /tmp/thunderbird.apk https://f-droid.org/repo/net.thunderbird.android_32.apk
+    echo 'Installing Thunderbird'
+    curl -L -o /tmp/thunderbird.apk https://f-droid.org/repo/net.thunderbird.android_32.apk
     adb install /tmp/thunderbird.apk 
-
-
-   echo "============================"
-   echo "AFTER:"
-   echo ""
-   adb shell pm list packages
+    echo 'Installing Aurora Store'
+    curl -L -o /tmp/aurora.apk https://f-droid.org/repo/com.aurora.store_76.apk
+    adb install /tmp/aurora.apk
+    
 read -p "Press enter to reboot target android device, or Control-C to end script now without reboot."
 echo "Rebooting android device in 5 seconds"
 sleep 5
