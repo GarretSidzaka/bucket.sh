@@ -209,19 +209,20 @@ sleep 3
 if [$1 -eq "--skip-expanded"]; then
 echo "Skipping expanded Installation"
 else
+echo "INSTALLING....."
     #hardlinked latest version
-    echo 'Installing Servo Browser.'
+    echo 'Servo Browser.'
     curl -L -o /tmp/servo.apk https://download.servo.org/nightly/android/servo-aarch64-android.apk
     adb install /tmp/servo.apk 
     
     #github newest version
-    echo 'Installing Redreader'
+    echo 'Redreader'
     redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
     curl -L -o /tmp/redreader.apk https://github.com/QuantumBadger/RedReader/releases/download/"${redreaderversion}"/RedReader-"${redreaderversion}".apk
     adb install /tmp/redreader.apk
 
     #repo hardlink
-    echo 'Installing Aurora Store'
+    echo 'Aurora Store'
     curl -L -o /tmp/aurora.apk https://f-droid.org/repo/com.aurora.store_76.apk 
     adb install /tmp/aurora.apk
     echo 'Aegis Authenticator'
