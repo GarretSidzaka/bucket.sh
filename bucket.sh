@@ -93,7 +93,7 @@ com.google.android.apps.googleassistant
 com.google.android.apps.magazines
 com.google.android.apps.maps
 com.google.android.apps.photos
-com.google.android.streeT
+com.google.android.street
 com.google.android.apps.podcasts
 com.google.android.apps.subscriptions.red
 com.google.android.apps.tachyon
