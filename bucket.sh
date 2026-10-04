@@ -191,7 +191,7 @@ do
 done
 sleep 3
 
-#SOFTWARE INSTALLS
+#SOFTWARE INSTALLS.  SOME ARE FROM https://todon.nl/users/joenepraat/statuses/117360993990051238
     echo 'Installing F-Droid.'
     curl -o /tmp/F-Droid.apk https://f-droid.org/F-Droid.apk
     adb install /tmp/F-Droid.apk
