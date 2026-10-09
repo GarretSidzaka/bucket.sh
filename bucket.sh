@@ -58,26 +58,7 @@ com.softwinner.screenshot
 com.softwinner.qrscanner
 com.softwinner.timerswitch
 #BACKAGES FROM DEBLOAT SCRIPT https://gist.github.com/heywoodlh/12195025d8bfc4d4dc8cb0a1dfec4df1
-com.motorola.android.fmradio
-com.motorola.fmplayer
-com.motorola.genie
-com.motorola.moto
-com.motorola.launcher3
-com.motorola.gamemode
-com.motorola.demo
-com.motorola.help
-com.motorola.paks
-com.motorola.screenshoteditor
-com.motorola.hiddenmenuapp
-com.motorola.demo.env
-com.motorola.appforecast
 com.lmi.motorola.rescuesecurity
-com.motorola.bug2go
-com.motorola.motocare.internal
-com.motorola.motocare
-com.motorola.android.nativedropboxagent
-com.motorola.brapps
-com.motorola.easyprefix
 com.facebook.katana
 com.facebook.appmanager
 com.facebook.services
@@ -184,7 +165,7 @@ sleep 3
 done
 
 # Remove vendor bloat
-for pkg in $(adb shell pm list packages | grep -iE 'com.motorola|facebook|com.facebook|com.tmobile|com.dish|android.apps|linkedin|snapchat|tiktok|com.aura|\.installer$|com.metro|in.playsimple|metropcs|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking' | grep -viE 'com.motorola.android.providers.settings|faceunlock' | cut -d':' -f2)
+for pkg in $(adb shell pm list packages | grep -iE 'com.motorola|com.att|facebook|com.facebook|com.tmobile|com.dish|android.apps|linkedin|snapchat|tiktok|com.aura|\.installer$|com.metro|in.playsimple|metropcs|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking' | grep -viE 'com.motorola.android.providers.settings|faceunlock' | cut -d':' -f2)
 do
     echo "Uninstalling: $pkg"
     adb shell pm uninstall -k --user 0 $pkg
