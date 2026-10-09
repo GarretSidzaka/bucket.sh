@@ -158,6 +158,13 @@ echo "adb not installed"
 exit 1
 }
 
+echo 'creating list of pre-installed packages'
+   adb shell pm list packages | tee ./packages.txt
+echo "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
+read -p "Press enter bucket the hell out of your android, or Control-C to end script now."
+
+
+
 for i in "${target_package_list[@]}"; do
 echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
 adb shell pm uninstall -k --user 0 "$i"
