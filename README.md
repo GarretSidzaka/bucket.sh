@@ -18,8 +18,4 @@
 * MAKE BUCKET.SH EXECUTABLE.
 * RUN WITH --skip-expanded AS AN ARGUMENT FOR TRULY BARE MINIMAL ANDROID EXPERIENCE.
 
-<img src="https://garretsidzaka.com/content/images/2026/10/bucket.gif" />
-
-
-
 <img width="700" height="394" alt="image" src="https://github.com/user-attachments/assets/1dd86582-21f1-4153-8a69-673cccc35d7e" />
