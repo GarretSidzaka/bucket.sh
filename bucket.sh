@@ -186,9 +186,9 @@ sleep 3
     echo 'Installing unlauncher.'
     curl -o /tmp/unlauncher.apk https://f-droid.org/repo/com.jkuester.unlauncher_18.apk
     adb install /tmp/unlauncher.apk
-    echo 'Installing Foss keyboard.'
-    curl -o /tmp/fosskeyboard.apk https://f-droid.org/repo/org.fossify.keyboard_14.apk
-    adb install /tmp/fosskeyboard.apk
+    echo 'Heliboard Keyboard'
+    curl -L -o /tmp/keyboard_4101.apk https://f-droid.org/repo/helium314.keyboard_4101.apk 
+    adb install /tmp/keyboard_4101.apk
     echo 'Installing Waterfox Browser.'
     waterfoxversion="$(curl -s https://api.github.com/repos/BrowserWorks/waterfox-android/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep arm64 | cut -d '/' -f 8)"
     curl -L -o /tmp/waterfox.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${waterfoxversion}"/fenix-waterfox-arm64-v8a-release.apk
@@ -197,19 +197,22 @@ sleep 3
 if [$1 -eq "--skip-expanded"]; then
 echo "Skipping expanded Installation"
 else
-echo "INSTALLING....."
+echo "INSTALLING EXPANDED FOSS APPS....."
     #hardlinked latest version
     echo 'Servo Browser.'
     curl -L -o /tmp/servo.apk https://download.servo.org/nightly/android/servo-aarch64-android.apk
     adb install /tmp/servo.apk 
     
     #github newest version
-    echo 'Redreader'
-    redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
-    curl -L -o /tmp/redreader.apk https://github.com/QuantumBadger/RedReader/releases/download/"${redreaderversion}"/RedReader-"${redreaderversion}".apk
-    adb install /tmp/redreader.apk
+#    echo 'Redreader'
+#    redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
+#    curl -L -o /tmp/redreader.apk https://github.com/QuantumBadger/RedReader/releases/download/"${redreaderversion}"/RedReader-"${redreaderversion}".apk
+#    adb install /tmp/redreader.apk
 
     #repo hardlink
+    #echo ''
+    #curl -L -o /tmp/.apk x
+    #adb install /tmp/.apk 
     echo 'Aurora Store'
     curl -L -o /tmp/aurora.apk https://f-droid.org/repo/com.aurora.store_76.apk 
     adb install /tmp/aurora.apk
@@ -222,24 +225,15 @@ echo "INSTALLING....."
     echo 'DavX Calendar'
     curl -L -o /tmp/davdroid_405200005.apk https://f-droid.org/repo/at.bitfire.davdroid_405200005.apk 
     adb install /tmp/davdroid_405200005.apk
-    echo 'Monocles Mail'
-    curl -L -o /tmp/mail_12.apk https://f-droid.org/repo/de.monocles.mail_12.apk 
-    adb install /tmp/mail_12.apk 
     echo 'IzzyonDroid Repo'
     curl -L -o /tmp/izzyondroid_14.apk https://apt.izzysoft.de/fdroid/repo/in.sunilpaulmathew.izzyondroid_14.apk 
     adb install /tmp/izzyondroid_14.apk 
-    echo 'Areada Reader'
-    curl -L -o /tmp/areada_15.apk https://f-droid.org/repo/app.areada_15.apk 
-    adb install /tmp/areada_15.apk
     echo 'Fluffychat Matrix'
     curl -L -o /tmp/fluffychat_3566.apk https://f-droid.org/repo/chat.fluffy.fluffychat_3566.apk 
     adb install /tmp/fluffychat_3566.apk
     echo 'GhostCommander Files'
     curl -L -o /tmp/commander_479.apk https://f-droid.org/repo/com.ghostsq.commander_479.apk 
     adb install /tmp/commander_479.apk
-    echo 'Krita Art'
-    curl -L -o /tmp/krita_5011804.apk https://f-droid.org/repo/org.krita_5011804.apk 
-    adb install /tmp/krita_5011804.apk
     echo 'VLC Player'
     curl -L -o /tmp/vlc_13070108.apk https://f-droid.org/repo/org.videolan.vlc_13070108.apk 
     adb install /tmp/vlc_13070108.apk 
@@ -252,9 +246,6 @@ echo "INSTALLING....."
     echo 'Wikipedia'
     curl -L -o /tmp/wikipedia_50606.apk https://f-droid.org/repo/org.wikipedia_50606.apk 
     adb install /tmp/wikipedia_50606.apk
-    echo 'New Pipe'
-    curl -L -o /tmp/newpipe_1015_cb84069.apk https://f-droid.org/repo/org.schabi.newpipe_1015_cb84069.apk 
-    adb install /tmp/newpipe_1015_cb84069.apk 
     echo 'Fedilab'
     curl -L -o /tmp/mastodon_570.apk https://f-droid.org/repo/fr.gouv.etalab.mastodon_570.apk 
     adb install /tmp/mastodon_570.apk 
@@ -276,15 +267,42 @@ echo "INSTALLING....."
     echo 'Fossify Camera'
     curl -L -o /tmp/camera_11.apk https://f-droid.org/repo/org.fossify.camera_11.apk 
     adb install /tmp/camera_11.apk 
-    echo 'Heliboard Keyboard'
-    curl -L -o /tmp/keyboard_4101.apk https://f-droid.org/repo/helium314.keyboard_4101.apk 
-    adb install /tmp/keyboard_4101.apk
-    echo 'Anthology Reader'
-    curl -L -o /tmp/anthology_10008.apk https://apt.izzysoft.de/fdroid/repo/systems.nik.anthology_10008.apk 
-    adb install /tmp/anthology_10008.apk 
-    echo 'Compressor'
-    curl -L -o /tmp/us_27.apk https://apt.izzysoft.de/fdroid/repo/compress.joshattic.us_27.apk 
-    adb install /tmp/us_27.apk 
+    echo 'orion.viewer'
+    curl -L -o /tmp/orion.viewer.apk https://f-droid.org/repo/universe.constellation.orion.viewer_2493.apk
+    adb install /tmp/orion.viewer.apk 
+    echo 'ntfy'
+    curl -L -o /tmp/ntfy.apk https://f-droid.org/repo/io.heckel.ntfy_63.apk
+    adb install /tmp/ntfy.apk 
+    echo 'pocketpaint'
+    curl -L -o /tmp/pocketpaint.apk https://f-droid.org/repo/org.catrobat.paintroid_54.apk
+    adb install /tmp/pocketpaint.apk 
+    echo 'thunderbird'
+    curl -L -o /tmp/thunderbird.apk https://f-droid.org/repo/net.thunderbird.android_33.apk
+    adb install /tmp/thunderbird.apk 
+    echo 'trackercontrol'
+    curl -L -o /tmp/trackercontrol.apk https://f-droid.org/repo/net.kollnig.missioncontrol.fdroid_2026080501.apk
+    adb install /tmp/trackercontrol.apk 
+    echo 'pipepipe'
+    curl -L -o /tmp/pipepipe.apk https://f-droid.org/repo/InfinityLoop1309.NewPipeEnhanced_110904.apk
+    adb install /tmp/pipepipe.apk
+    echo 'wifianalyzer'
+    curl -L -o /tmp/wifianalyzer.apk https://f-droid.org/repo/com.vrem.wifianalyzer_72.apk
+    adb install /tmp/wifianalyzer.apk 
+    echo 'comaps'
+    curl -L -o /tmp/comaps.apk https://f-droid.org/repo/app.comaps.fdroid_26100519.apk
+    adb install /tmp/comaps.apk 
+    echo 'episteme'
+    curl -L -o /tmp/episteme.apk https://f-droid.org/repo/com.aryan.reader.oss_62.apk
+    adb install /tmp/episteme.apk 
+    echo 'scrubpony'
+    curl -L -o /tmp/scrubpony.apk https://f-droid.org/repo/com.norsehorse.scrubpony_6.apk
+    adb install /tmp/scrubpony.apk 
+    echo 'yetanothercallblocker'
+    curl -L -o /tmp/yetanothercallblocker.apk https://f-droid.org/repo/dummydomain.yetanothercallblocker_5170.apk
+    adb install /tmp/yetanothercallblocker.apk 
+    echo 'syncthingfork'
+    curl -L -o /tmp/syncthingfork.apk https://f-droid.org/repo/com.github.catfriend1.syncthingfork_2010500.apk
+    adb install /tmp/syncthingfork.apk 
 fi
 
     
