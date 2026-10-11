@@ -303,6 +303,9 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'syncthingfork'
     curl -L -o /tmp/syncthingfork.apk https://f-droid.org/repo/com.github.catfriend1.syncthingfork_2010500.apk
     adb install /tmp/syncthingfork.apk 
+    echo 'nora'
+    curl -L -o /tmp/nora.apk https://f-droid.org/repo/jp.nonbili.nora_9504.apk
+    adb install /tmp/nora.apk 
 fi
 
     
