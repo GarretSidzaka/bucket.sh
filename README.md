@@ -1,7 +1,8 @@
 # BUCKET.SH
 
 <img src="https://garretsidzaka.com/content/images/2026/10/bucket.gif" />
-## Remove the bloat!
+
+### Remove the bloat!
 
 ## DISCLAIMER
 * CANNOT BE HELD LIABLE FOR YOU RUNNING THIS ON YOUR ANDROID PHONE OR TABLET AND BRICKING IT.
