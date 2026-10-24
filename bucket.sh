@@ -160,8 +160,8 @@ exit 1
 
 echo 'creating list of pre-installed packages'
    adb shell pm list packages | tee ./packages.txt
-echo "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
-read -p "Press enter bucket the hell out of your android, or Control-C to end script now."
+printf "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
+read -rp "Press enter bucket the hell out of your android, or Control-C to end script now."
 
 
 
@@ -175,7 +175,7 @@ done
 for pkg in $(adb shell pm list packages | grep -iE 'com.motorola|com.att|facebook|com.facebook|com.tmobile|com.dish|android.apps|linkedin|snapchat|tiktok|com.aura|\.installer$|com.metro|in.playsimple|metropcs|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking' | grep -viE 'com.motorola.android.providers.settings|faceunlock' | cut -d':' -f2)
 do
     echo "Uninstalling: $pkg"
-    adb shell pm uninstall -k --user 0 $pkg
+    adb shell pm uninstall -k --user 0 "${pkg}"
 done
 sleep 3
 
@@ -194,7 +194,7 @@ sleep 3
     curl -L -o /tmp/waterfox.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${waterfoxversion}"/fenix-waterfox-arm64-v8a-release.apk
     adp install /tmp/waterfox.apk
 
-if [$1 -eq "--skip-expanded"]; then
+if [ "$1" = "--skip-expanded" ]; then
 echo "Skipping expanded Installation"
 else
 echo "INSTALLING EXPANDED FOSS APPS....."
@@ -309,7 +309,7 @@ echo "INSTALLING EXPANDED FOSS APPS....."
 fi
 
     
-read -p "Press enter to reboot target android device, or Control-C to end script now without reboot."
+read -rp "Press enter to reboot target android device, or Control-C to end script now without reboot."
 echo "Rebooting android device in 5 seconds"
 sleep 5
 adb shell reboot
