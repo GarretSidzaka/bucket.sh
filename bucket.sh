@@ -152,8 +152,59 @@ com.sprint.ms.cdm
 com.sprint.ms.smf.services
 com.sprint.ce.updater
 com.sprint.w.installer
+
+#MORE BLOATWARE
 cci.usage
 com.block.juggle
+cci.usage
+com.att.csoiam.mobilekey
+com.att.dh
+com.att.iqi
+com.att.mobile.android.vvm
+com.att.personalcloud
+com.cricketwireless.minus
+com.cricketwireless.thescoop
+com.digitalturbine.android.apps.news.uscellular
+com.handmark.expressweather
+com.inmobi.weather
+com.metropcs.metrozone
+com.mizmowireless.acctmgt
+com.oem.euiccpartnerapp 
+com.oem.euiccpartnerapp.overlay.att
+com.oem.euiccpartnerapp.overlay.vzw
+com.oem.euiccpartnerapp.overlay.na
+com.oem.euiccpartnerapp.overlay.retca
+com.oem.euiccpartnerapp.overlay.tmo
+com.oem.euiccpartnerapp.overlay.cc
+com.oem.euiccpartnerapp.overlay.br
+com.spectrum.cm.headless
+com.swishme.tracfone
+com.tmobile.dm.cm
+com.tmobile.dm.ms.services
+com.tmobile.echolocate
+com.tmobile.echolocate.system
+com.tmobile.m1
+com.tmobile.pr.adapt
+com.tmobile.rsusrv 
+com.tmobile.rsuapp 
+com.tmobile.rsuadapter.aidl
+com.tracfone.generic.mysites
+com.tracfone.preload.accountservices
+com.uscc.ecid
+com.verizon.mips.services
+com.verizon.remoteSimlock
+com.vcast.mediamanager
+com.vzw.apnlib
+com.vzw.ecid
+com.vzw.hss.myverizon
+securityandprivacy.android.verizon.vms
+com.ironsrc.aura.tmo
+com.trustonic.alpsservice
+com.trustonic.teeservice
+com.aura.jet.att 
+com.aura.oobe.motorola
+com.aura.oobe.solutions
+
 #motorolla deny list
 com.motorola.account
 com.motorola.aiservices
@@ -202,7 +253,6 @@ com.motorola.smartfeed
 com.motorola.spectrum.setup.extensions
 com.motorola.timeweatherwidget
 com.motorola.visualvoicemail
-
 com.motorola.wifi.motowifimetrics
 
 #VERIZON APPS MIGHT- NEED TO KEEP IF YOU USE THEM
@@ -211,6 +261,14 @@ com.motorola.vzw.phone.extensions
 com.motorola.vzw.settings.extensions
 com.motorola.vzw.voicemail.extensions
 com.motorola.vzw.pco.extensions.pcoreceiver 
+com.motorola.vzw.voicemail.extensions
+#TMOBILE APPS BLACKLIST
+com.motorola.tmo.setupext
+com.motorola.tmo.settingsext
+com.tmobile.tuesdays
+#OTHER CARRIERS
+com.motorola.tracfone.rsu
+
 
 )
 command -v adb || {
@@ -232,7 +290,7 @@ sleep 3
 done
 
 # Remove vendor bloat
-for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|com.facebook|com.dish|android.apps|linkedin|snapchat|tiktok|com.aura|\.installer$|com.metro|in.playsimple|metropcs|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking' | grep -viE 'com.motorola.android.providers.settings|faceunlock' | cut -d':' -f2)
+for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|android.apps|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking|huub|payjoy' | grep -viE 'com.motorola.android.providers.settings|faceunlock' | cut -d':' -f2)
 do
     echo "Uninstalling: $pkg"
     adb shell pm uninstall -k --user 0 "${pkg}"
