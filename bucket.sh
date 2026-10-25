@@ -377,9 +377,6 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'Fossify Camera'
     curl -L -o /tmp/camera_11.apk https://f-droid.org/repo/org.fossify.camera_11.apk 
     adb install /tmp/camera_11.apk 
-    echo 'orion.viewer'
-    curl -L -o /tmp/orion.viewer.apk https://f-droid.org/repo/universe.constellation.orion.viewer_2493.apk
-    adb install /tmp/orion.viewer.apk 
     echo 'ntfy'
     curl -L -o /tmp/ntfy.apk https://f-droid.org/repo/io.heckel.ntfy_63.apk
     adb install /tmp/ntfy.apk 
