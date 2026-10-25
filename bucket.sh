@@ -159,6 +159,7 @@ com.motorola.account
 com.motorola.aiservices
 com.motorola.android.buacloudcontactadapter
 com.motorola.android.contacts.overlay.vzw
+com.motorola.contacts.preloadcontacts.overlay.vzw
 com.motorola.android.nativedropboxagent
 com.motorola.android.provisioning
 com.motorola.android.providers.chromehomepage
@@ -171,6 +172,45 @@ com.motorola.comcast.settings.extensions
 com.motorola.default.ringtones.overlay.tmo.usku
 com.motorola.default.ringtones.overlay.metro.usku
 com.motorola.demo
+com.motorola.dolby.dolbyui
+com.motorola.dynamicvolume
+com.motorola.faceunlock
+com.motorola.gamemode
+com.motorola.genie
+com.motorola.livewallpaper3
+com.motorola.mobiledesktop
+com.motorola.mobiledesktop.core
+com.motorola.motocit
+com.motorola.motosecurecore
+com.motorola.motosignature.app
+com.motorola.motosignature2.app
+com.motorola.nfwlocationattribution
+com.motorola.om
+com.motorola.omadm.att
+com.motorola.omadm.service 
+com.motorola.omadm.vzw
+com.motorola.paks
+com.motorola.paks.notification
+com.motorola.personalize
+com.motorola.playautoinstallext
+com.motorola.setup
+com.motorola.setupwizard.devicesetup
+com.motorola.setupwizard.controller
+com.motorola.setupwizard.phoneservice
+com.motorola.setupwizard.devicesetup
+com.motorola.smartfeed
+com.motorola.spectrum.setup.extensions
+com.motorola.timeweatherwidget
+com.motorola.visualvoicemail
+
+com.motorola.wifi.motowifimetrics
+
+#VERIZON APPS MIGHT- NEED TO KEEP IF YOU USE THEM
+com.motorola.vzw.cloudsetup
+com.motorola.vzw.phone.extensions
+com.motorola.vzw.settings.extensions
+com.motorola.vzw.voicemail.extensions
+com.motorola.vzw.pco.extensions.pcoreceiver 
 
 )
 command -v adb || {
