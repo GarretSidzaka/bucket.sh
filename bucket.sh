@@ -289,7 +289,7 @@ echo ""
 read -rp "Press enter bucket the hell out of your android, or Control-C to end script now."
 
 if [ "$1" = "--skip-pruning" ]; then
-echo "Skipping app pruning completely, app isnt doing much!"
+echo "Skipping app pruning completely!"
 else
 
 for i in "${target_package_list[@]}"; do
@@ -297,13 +297,17 @@ echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
 adb shell pm uninstall -k --user 0 "$i"
 done
 sleep 3
-# Remove vendor bloat
+echo "Remove vendor bloat"
 for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|homedepot|booking|huub|payjoy' | cut -d':' -f2)
 do
     echo "Uninstalling: $pkg"
     adb shell pm uninstall -k --user 0 "${pkg}"
 done
+fi
 sleep 3
+
+
+
 if [ "$1" = "--skip-expanded" ]; then
 echo "Skipping expanded Installation"
 else
