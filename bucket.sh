@@ -269,8 +269,8 @@ com.motorola.vzw.voicemail.extensions
 com.motorola.vzw.pco.extensions.pcoreceiver 
 com.motorola.vzw.voicemail.extensions
 #TMOBILE APPS BLACKLIST
-com.motorola.tmo.setupext
-com.motorola.tmo.settingsext
+#com.motorola.tmo.setupext
+#com.motorola.tmo.settingsext
 com.tmobile.tuesdays
 #OTHER CARRIERS
 com.motorola.tracfone.rsu
