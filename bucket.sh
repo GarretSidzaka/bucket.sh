@@ -347,9 +347,6 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'GhostCommander Files'
     curl -L -o /tmp/commander_479.apk https://f-droid.org/repo/com.ghostsq.commander_479.apk 
     adb install /tmp/commander_479.apk
-    echo 'VLC Player'
-    curl -L -o /tmp/vlc_13070108.apk https://f-droid.org/repo/org.videolan.vlc_13070108.apk 
-    adb install /tmp/vlc_13070108.apk 
     echo 'Spamblocker Caller'
     curl -L -o /tmp/spamblocker_614.apk https://f-droid.org/repo/dev.kerballone.spamblocker_614.apk 
     adb install /tmp/spamblocker_614.apk
