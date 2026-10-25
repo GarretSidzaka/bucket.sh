@@ -134,9 +134,9 @@ com.mobitv.client.tmobiletvhd
 com.tmobile.pr.mytmobile
 com.tmobile.m1
 com.tmobile.pr.adapt
-com.tmobile.rsuadapter.qualcomm
-com.tmobile.rsuapp
-com.tmobile.rsusrv
+#com.tmobile.rsuadapter.qualcomm
+#com.tmobile.rsuapp
+#com.tmobile.rsusrv
 att.dh
 att.dtv.shaderemote
 att.tv
@@ -198,8 +198,8 @@ com.vzw.ecid
 com.vzw.hss.myverizon
 securityandprivacy.android.verizon.vms
 com.ironsrc.aura.tmo
-com.trustonic.alpsservice
-com.trustonic.teeservice
+#com.trustonic.alpsservice
+#com.trustonic.teeservice
 com.aura.jet.att 
 com.aura.oobe.motorola
 com.aura.oobe.solutions
@@ -260,8 +260,8 @@ com.motorola.vzw.voicemail.extensions
 com.motorola.vzw.pco.extensions.pcoreceiver 
 com.motorola.vzw.voicemail.extensions
 #TMOBILE APPS BLACKLIST
-com.motorola.tmo.setupext
-com.motorola.tmo.settingsext
+#com.motorola.tmo.setupext
+#com.motorola.tmo.settingsext
 com.tmobile.tuesdays
 #OTHER CARRIERS
 com.motorola.tracfone.rsu
@@ -286,7 +286,7 @@ sleep 3
 done
 
 # Remove vendor bloat
-for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|android.apps|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking|huub|payjoy' | grep -viE 'com.motorola.android.providers.settings|faceunlock' | cut -d':' -f2)
+for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|android.apps|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking|huub|payjoy' | cut -d':' -f2)
 do
     echo "Uninstalling: $pkg"
     adb shell pm uninstall -k --user 0 "${pkg}"
