@@ -1,4 +1,5 @@
 # BUCKET.SH
+# THIS IS A JOKE, NEVER RUN THIS
 
 <img src="https://garretsidzaka.com/content/images/2026/10/bucket.gif" />
 
