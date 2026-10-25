@@ -291,13 +291,12 @@ read -rp "Press enter bucket the hell out of your android, or Control-C to end s
 if [ "$1" = "--skip-pruning" ]; then
 echo "Skipping app pruning completely!"
 else
-
+echo "Remove vendor bloat"
 for i in "${target_package_list[@]}"; do
 echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
 adb shell pm uninstall -k --user 0 "$i"
 done
-sleep 3
-echo "Remove vendor bloat"
+
 for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|homedepot|booking|huub|payjoy' | cut -d':' -f2)
 do
     echo "Uninstalling: $pkg"
@@ -440,7 +439,5 @@ fi
 
     
 read -rp "Press enter to reboot target android device, or Control-C to end script now without reboot."
-echo "Rebooting android device in 5 seconds"
-sleep 5
 adb shell reboot
 exit 0
