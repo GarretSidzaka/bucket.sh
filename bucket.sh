@@ -212,8 +212,8 @@ com.aura.oobe.solutions
 #com.motorola.motocare
 com.motorola.android.fmradio
 com.motorola.motocameradesktop
-com.motorola.spaces
-com.motorola.account
+#com.motorola.spaces
+#com.motorola.account
 com.motorola.aiservices
 com.motorola.android.buacloudcontactadapter
 com.motorola.android.contacts.overlay.vzw
