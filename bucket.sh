@@ -152,6 +152,26 @@ com.sprint.ms.cdm
 com.sprint.ms.smf.services
 com.sprint.ce.updater
 com.sprint.w.installer
+cci.usage
+com.block.juggle
+#motorolla deny list
+com.motorola.account
+com.motorola.aiservices
+com.motorola.android.buacloudcontactadapter
+com.motorola.android.contacts.overlay.vzw
+com.motorola.android.nativedropboxagent
+com.motorola.android.provisioning
+com.motorola.android.providers.chromehomepage
+com.motorola.appforecast
+com.motorola.audiorecorder
+com.motorola.camera3.content.ai
+com.motorola.bug2go
+com.motorola.ccc.ota
+com.motorola.comcast.settings.extensions
+com.motorola.default.ringtones.overlay.tmo.usku
+com.motorola.default.ringtones.overlay.metro.usku
+com.motorola.demo
+
 )
 command -v adb || {
 echo "adb not installed"
@@ -172,7 +192,7 @@ sleep 3
 done
 
 # Remove vendor bloat
-for pkg in $(adb shell pm list packages | grep -iE 'com.motorola|com.att|facebook|com.facebook|com.tmobile|com.dish|android.apps|linkedin|snapchat|tiktok|com.aura|\.installer$|com.metro|in.playsimple|metropcs|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking' | grep -viE 'com.motorola.android.providers.settings|faceunlock' | cut -d':' -f2)
+for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|com.facebook|com.dish|android.apps|linkedin|snapchat|tiktok|com.aura|\.installer$|com.metro|in.playsimple|metropcs|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking' | grep -viE 'com.motorola.android.providers.settings|faceunlock' | cut -d':' -f2)
 do
     echo "Uninstalling: $pkg"
     adb shell pm uninstall -k --user 0 "${pkg}"
