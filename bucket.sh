@@ -181,15 +181,15 @@ com.oem.euiccpartnerapp.overlay.cc
 com.oem.euiccpartnerapp.overlay.br
 com.spectrum.cm.headless
 com.swishme.tracfone
-com.tmobile.dm.cm
-com.tmobile.dm.ms.services
-com.tmobile.echolocate
-com.tmobile.echolocate.system
-com.tmobile.m1
-com.tmobile.pr.adapt
-com.tmobile.rsusrv 
-com.tmobile.rsuapp 
-com.tmobile.rsuadapter.aidl
+#com.tmobile.dm.cm
+#com.tmobile.dm.ms.services
+#com.tmobile.echolocate
+#com.tmobile.echolocate.system
+#com.tmobile.m1
+#com.tmobile.pr.adapt
+#com.tmobile.rsusrv 
+#com.tmobile.rsuapp 
+#com.tmobile.rsuadapter.aidl
 com.tracfone.generic.mysites
 com.tracfone.preload.accountservices
 com.uscc.ecid
@@ -207,9 +207,9 @@ com.aura.jet.att
 com.aura.oobe.motorola
 com.aura.oobe.solutions
 ##MOTOROLLA DENY LIST
-com.motorola.help
-com.motorola.moto
-com.motorola.motocare
+#com.motorola.help
+#com.motorola.moto
+#com.motorola.motocare
 com.motorola.android.fmradio
 com.motorola.motocameradesktop
 com.motorola.spaces
