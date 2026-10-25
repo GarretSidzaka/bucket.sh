@@ -181,12 +181,12 @@ com.oem.euiccpartnerapp.overlay.cc
 com.oem.euiccpartnerapp.overlay.br
 com.spectrum.cm.headless
 com.swishme.tracfone
-com.tmobile.dm.cm
-com.tmobile.dm.ms.services
-com.tmobile.echolocate
-com.tmobile.echolocate.system
-com.tmobile.m1
-com.tmobile.pr.adapt
+#com.tmobile.dm.cm
+#com.tmobile.dm.ms.services
+#com.tmobile.echolocate
+#com.tmobile.echolocate.system
+#com.tmobile.m1
+#com.tmobile.pr.adapt
 #com.tmobile.rsusrv 
 #com.tmobile.rsuapp 
 #com.tmobile.rsuadapter.aidl
@@ -297,7 +297,7 @@ echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
 adb shell pm uninstall -k --user 0 "$i"
 done
 
-for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|homedepot|booking|huub|payjoy' | cut -d':' -f2)
+for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|homedepot|booking|huub' | cut -d':' -f2)
 do
     echo "Uninstalling: $pkg"
     adb shell pm uninstall -k --user 0 "${pkg}"
