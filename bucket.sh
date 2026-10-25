@@ -10,6 +10,7 @@ target_package_list=(
 com.google.android.gms.location.history
 com.google.android.gms.supervision
 com.google.android.googlequicksearchbox
+com.google.android.apps.messaging
 com.google.android.apps.docs
 com.google.android.apps.googleassistant
 com.google.android.apps.magazines
@@ -204,6 +205,12 @@ com.aura.jet.att
 com.aura.oobe.motorola
 com.aura.oobe.solutions
 ##MOTOROLLA DENY LIST
+com.motorola.android.fmradio
+com.motorola.help
+com.motorola.moto
+com.motorola.motocare
+com.motorola.motocameradesktop
+com.motorola.spaces
 com.motorola.account
 com.motorola.aiservices
 com.motorola.android.buacloudcontactadapter
