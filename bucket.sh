@@ -238,7 +238,7 @@ com.motorola.genie
 com.motorola.livewallpaper3
 com.motorola.mobiledesktop
 com.motorola.mobiledesktop.core
-com.motorola.motocit
+#com.motorola.motocit
 #com.motorola.motosecurecore
 #com.motorola.motosignature.app
 #com.motorola.motosignature2.app
@@ -248,7 +248,7 @@ com.motorola.omadm.att
 com.motorola.omadm.service 
 com.motorola.omadm.vzw
 #com.motorola.paks
-com.motorola.paks.notification
+#com.motorola.paks.notification
 com.motorola.personalize
 com.motorola.playautoinstallext
 #com.motorola.setup
@@ -325,9 +325,6 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     waterfoxversion="$(curl -s https://api.github.com/repos/BrowserWorks/waterfox-android/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep arm64 | cut -d '/' -f 8)"
     curl -L -o /tmp/waterfox.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${waterfoxversion}"/fenix-waterfox-arm64-v8a-release.apk
     adb install /tmp/waterfox.apk
-
-
-    #hardlinked latest version
     echo 'Servo Browser.'
     curl -L -o /tmp/servo.apk https://download.servo.org/nightly/android/servo-aarch64-android.apk
     adb install /tmp/servo.apk 
@@ -338,10 +335,6 @@ echo "INSTALLING EXPANDED FOSS APPS....."
 #    curl -L -o /tmp/redreader.apk https://github.com/QuantumBadger/RedReader/releases/download/"${redreaderversion}"/RedReader-"${redreaderversion}".apk
 #    adb install /tmp/redreader.apk
 
-    #repo hardlink
-    #echo ''
-    #curl -L -o /tmp/.apk x
-    #adb install /tmp/.apk 
     echo 'Aurora Store'
     curl -L -o /tmp/aurora.apk https://f-droid.org/repo/com.aurora.store_76.apk 
     adb install /tmp/aurora.apk
