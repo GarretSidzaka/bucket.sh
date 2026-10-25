@@ -423,12 +423,12 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'nora'
     curl -L -o /tmp/nora.apk https://f-droid.org/repo/jp.nonbili.nora_9504.apk
     adb install /tmp/nora.apk 
-    echo 'vlc'
-    curl -L -o /tmp/vlc.apk https://f-droid.org/repo/org.videolan.vlc_13070208.apk
-    adb install /tmp/vlc.apk 
-    echo 'orion'
-    curl -L -o /tmp/orion.apk https://f-droid.org/repo/universe.constellation.orion.viewer_2506.apk
-    adb install /tmp/orion.apk   
+    #echo 'vlc'
+    #curl -L -o /tmp/vlc.apk https://f-droid.org/repo/org.videolan.vlc_13070208.apk
+    #adb install /tmp/vlc.apk 
+    #echo 'orion'
+    #curl -L -o /tmp/orion.apk https://f-droid.org/repo/universe.constellation.orion.viewer_2506.apk
+    #adb install /tmp/orion.apk   
 fi
 
     
