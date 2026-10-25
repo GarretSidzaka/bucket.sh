@@ -211,6 +211,7 @@ com.aura.oobe.solutions
 #com.motorola.moto
 #com.motorola.motocare
 com.motorola.android.fmradio
+com.motorola.fmplayer
 com.motorola.motocameradesktop
 #com.motorola.spaces
 #com.motorola.account
