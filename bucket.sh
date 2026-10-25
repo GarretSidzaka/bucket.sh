@@ -282,9 +282,8 @@ read -rp "Press enter bucket the hell out of your android, or Control-C to end s
 for i in "${target_package_list[@]}"; do
 echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
 adb shell pm uninstall -k --user 0 "$i"
-sleep 3
 done
-
+sleep 3
 # Remove vendor bloat
 for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|android.apps|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking|huub|payjoy' | cut -d':' -f2)
 do
@@ -306,7 +305,7 @@ sleep 3
     echo 'Installing Waterfox Browser.'
     waterfoxversion="$(curl -s https://api.github.com/repos/BrowserWorks/waterfox-android/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep arm64 | cut -d '/' -f 8)"
     curl -L -o /tmp/waterfox.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${waterfoxversion}"/fenix-waterfox-arm64-v8a-release.apk
-    adp install /tmp/waterfox.apk
+    adb install /tmp/waterfox.apk
 
 if [ "$1" = "--skip-expanded" ]; then
 echo "Skipping expanded Installation"
