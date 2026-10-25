@@ -152,7 +152,6 @@ com.sprint.ms.cdm
 com.sprint.ms.smf.services
 com.sprint.ce.updater
 com.sprint.w.installer
-
 #MORE BLOATWARE
 cci.usage
 com.block.juggle
@@ -204,8 +203,7 @@ com.trustonic.teeservice
 com.aura.jet.att 
 com.aura.oobe.motorola
 com.aura.oobe.solutions
-
-#motorolla deny list
+#MOTOROLLA DENY LIST
 com.motorola.account
 com.motorola.aiservices
 com.motorola.android.buacloudcontactadapter
@@ -254,8 +252,7 @@ com.motorola.spectrum.setup.extensions
 com.motorola.timeweatherwidget
 com.motorola.visualvoicemail
 com.motorola.wifi.motowifimetrics
-
-#VERIZON APPS MIGHT- NEED TO KEEP IF YOU USE THEM
+#VERIZON APPS - MIGHT NEED TO KEEP IF YOU USE THEM
 com.motorola.vzw.cloudsetup
 com.motorola.vzw.phone.extensions
 com.motorola.vzw.settings.extensions
@@ -268,8 +265,7 @@ com.motorola.tmo.settingsext
 com.tmobile.tuesdays
 #OTHER CARRIERS
 com.motorola.tracfone.rsu
-
-
+#EMAIL YOUR DISGUSTING BUCKET OF KNOWN BAD PACKAGES TO GARRETSIDZAKA@PROTON.ME
 )
 command -v adb || {
 echo "adb not installed"
