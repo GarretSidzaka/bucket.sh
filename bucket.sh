@@ -18,6 +18,7 @@ com.google.android.apps.plus
 com.google.android.apps.restore
 com.google.android.apps.tachyon
 com.google.android.apps.youtube.kids
+com.google.android.apps.nbu.files
 com.google.android.calendar
 com.google.marvin.talkback
 com.google.android.onetimeinitializer
