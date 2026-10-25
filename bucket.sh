@@ -187,9 +187,9 @@ com.tmobile.echolocate
 com.tmobile.echolocate.system
 com.tmobile.m1
 com.tmobile.pr.adapt
-com.tmobile.rsusrv 
-com.tmobile.rsuapp 
-com.tmobile.rsuadapter.aidl
+#com.tmobile.rsusrv 
+#com.tmobile.rsuapp 
+#com.tmobile.rsuadapter.aidl
 com.tracfone.generic.mysites
 com.tracfone.preload.accountservices
 com.uscc.ecid
@@ -269,8 +269,8 @@ com.motorola.vzw.voicemail.extensions
 com.motorola.vzw.pco.extensions.pcoreceiver 
 com.motorola.vzw.voicemail.extensions
 #TMOBILE APPS BLACKLIST
-com.motorola.tmo.setupext
-com.motorola.tmo.settingsext
+#com.motorola.tmo.setupext
+#com.motorola.tmo.settingsext
 com.tmobile.tuesdays
 #OTHER CARRIERS
 com.motorola.tracfone.rsu
