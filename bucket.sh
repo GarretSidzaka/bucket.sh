@@ -281,7 +281,9 @@ exit 1
 
 echo 'creating list of pre-installed packages'
    adb shell pm list packages | tee ./packages.txt
+echo "=========================================================================="
 printf "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
+echo ""
 read -rp "Press enter bucket the hell out of your android, or Control-C to end script now."
 
 
