@@ -7,6 +7,9 @@
 #RUN WITH --skip-expanded AS AN ARGUMENT FOR TRULY BARE MINIMAL ANDROID EXPERIENCE.
 target_package_list=(
 #PACKAGES FROM https://xdaforums.com/t/guide-list-of-bloatware-on-emui-safe-to-remove.3700814/ AND MORE
+com.google.android.gms.location.history
+com.google.android.gms.supervision
+com.google.android.googlequicksearchbox
 com.google.android.apps.docs
 com.google.android.apps.googleassistant
 com.google.android.apps.magazines
@@ -282,12 +285,12 @@ adb shell pm uninstall -k --user 0 "$i"
 done
 sleep 3
 # Remove vendor bloat
-#for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking|huub|payjoy' | cut -d':' -f2)
-#do
-#    echo "Uninstalling: $pkg"
-#    adb shell pm uninstall -k --user 0 "${pkg}"
-#done
-#sleep 3
+for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|homedepot|booking|huub|payjoy' | cut -d':' -f2)
+do
+    echo "Uninstalling: $pkg"
+    adb shell pm uninstall -k --user 0 "${pkg}"
+done
+sleep 3
 
 #SOFTWARE INSTALLS.  SOME ARE FROM https://todon.nl/users/joenepraat/statuses/117360993990051238
     echo 'Installing F-Droid.'
@@ -410,6 +413,12 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'nora'
     curl -L -o /tmp/nora.apk https://f-droid.org/repo/jp.nonbili.nora_9504.apk
     adb install /tmp/nora.apk 
+    echo 'vlc'
+    curl -L -o /tmp/vlc.apk https://f-droid.org/repo/org.videolan.vlc_13070208.apk
+    adb install /tmp/vlc.apk 
+    echo 'orion'
+    curl -L -o /tmp/orion.apk https://f-droid.org/repo/universe.constellation.orion.viewer_2506.apk
+    adb install /tmp/orion.apk   
 fi
 
     
