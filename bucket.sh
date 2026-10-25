@@ -155,7 +155,6 @@ com.sprint.w.installer
 #MORE BLOATWARE
 cci.usage
 com.block.juggle
-cci.usage
 com.att.csoiam.mobilekey
 com.att.dh
 com.att.iqi
@@ -285,12 +284,12 @@ adb shell pm uninstall -k --user 0 "$i"
 done
 sleep 3
 # Remove vendor bloat
-for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|android.apps|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking|huub|payjoy' | cut -d':' -f2)
-do
-    echo "Uninstalling: $pkg"
-    adb shell pm uninstall -k --user 0 "${pkg}"
-done
-sleep 3
+#for pkg in $(adb shell pm list packages | grep -iE 'instagram|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|android.apps|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.android.chrome|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|com.thehomedepot|.folder|com.booking|huub|payjoy' | cut -d':' -f2)
+#do
+#    echo "Uninstalling: $pkg"
+#    adb shell pm uninstall -k --user 0 "${pkg}"
+#done
+#sleep 3
 
 #SOFTWARE INSTALLS.  SOME ARE FROM https://todon.nl/users/joenepraat/statuses/117360993990051238
     echo 'Installing F-Droid.'
