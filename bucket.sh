@@ -11,8 +11,8 @@ target_package_list=(
 PACKAGES FROM https://xdaforums.com/t/guide-list-of-bloatware-on-emui-safe-to-remove.3700814/ AND MORE
 #com.google.android.gms.location.history
 #com.google.android.gms.supervision
+#com.google.android.apps.messaging
 com.google.android.googlequicksearchbox
-com.google.android.apps.messaging
 com.google.android.apps.docs
 com.google.android.apps.googleassistant
 com.google.android.apps.magazines
