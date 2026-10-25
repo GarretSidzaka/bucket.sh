@@ -8,11 +8,11 @@
 #YOU CAN USE --skip-pruning TO NOT ACTUALLY DELETE STUFF, FOR WHATEVER REASON
 
 target_package_list=(
-#PACKAGES FROM https://xdaforums.com/t/guide-list-of-bloatware-on-emui-safe-to-remove.3700814/ AND MORE
-#com.google.android.gms.location.history
-#com.google.android.gms.supervision
-#com.google.android.apps.messaging
-#com.google.android.googlequicksearchbox
+PACKAGES FROM https://xdaforums.com/t/guide-list-of-bloatware-on-emui-safe-to-remove.3700814/ AND MORE
+com.google.android.gms.location.history
+com.google.android.gms.supervision
+com.google.android.apps.messaging
+com.google.android.googlequicksearchbox
 com.google.android.apps.docs
 com.google.android.apps.googleassistant
 com.google.android.apps.magazines
@@ -181,15 +181,15 @@ com.oem.euiccpartnerapp.overlay.cc
 com.oem.euiccpartnerapp.overlay.br
 com.spectrum.cm.headless
 com.swishme.tracfone
-#com.tmobile.dm.cm
-#com.tmobile.dm.ms.services
-#com.tmobile.echolocate
-#com.tmobile.echolocate.system
-#com.tmobile.m1
-#com.tmobile.pr.adapt
-#com.tmobile.rsusrv 
-#com.tmobile.rsuapp 
-#com.tmobile.rsuadapter.aidl
+com.tmobile.dm.cm
+com.tmobile.dm.ms.services
+com.tmobile.echolocate
+com.tmobile.echolocate.system
+com.tmobile.m1
+com.tmobile.pr.adapt
+com.tmobile.rsusrv 
+com.tmobile.rsuapp 
+com.tmobile.rsuadapter.aidl
 com.tracfone.generic.mysites
 com.tracfone.preload.accountservices
 com.uscc.ecid
@@ -269,8 +269,8 @@ com.motorola.vzw.voicemail.extensions
 com.motorola.vzw.pco.extensions.pcoreceiver 
 com.motorola.vzw.voicemail.extensions
 #TMOBILE APPS BLACKLIST
-#com.motorola.tmo.setupext
-#com.motorola.tmo.settingsext
+com.motorola.tmo.setupext
+com.motorola.tmo.settingsext
 com.tmobile.tuesdays
 #OTHER CARRIERS
 com.motorola.tracfone.rsu
