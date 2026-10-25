@@ -4,12 +4,14 @@
 #MORE DISCLAIMER: IF YOU THINK THIS SCRIPT MAKES ANDROID TRACKING DISABLED, I STRONGLY DOUBT IT.
 #MOREOVER:
 #MUST HAVE android-tools OR WHATEVER IT IS THAT GIVES YOU ADB
-#RUN WITH --skip-expanded AS AN ARGUMENT FOR TRULY BARE MINIMAL ANDROID EXPERIENCE.
+#RUN WITH --skip-expanded AS AN ARGUMENT FOR TRULY BARE MINIMAL ANDROID EXPERIENCE.  
+#YOU CAN USE --skip-pruning TO NOT ACTUALLY DELETE STUFF, FOR WHATEVER REASON
+
 target_package_list=(
 #PACKAGES FROM https://xdaforums.com/t/guide-list-of-bloatware-on-emui-safe-to-remove.3700814/ AND MORE
 #com.google.android.gms.location.history
 #com.google.android.gms.supervision
-com.google.android.apps.messaging
+#com.google.android.apps.messaging
 com.google.android.googlequicksearchbox
 com.google.android.apps.docs
 com.google.android.apps.googleassistant
@@ -286,7 +288,9 @@ printf "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG
 echo ""
 read -rp "Press enter bucket the hell out of your android, or Control-C to end script now."
 
-
+if [ "$1" = "--skip-pruning" ]; then
+echo "Skipping app pruning completely, app isnt doing much!"
+else
 
 for i in "${target_package_list[@]}"; do
 echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
@@ -300,7 +304,10 @@ do
     adb shell pm uninstall -k --user 0 "${pkg}"
 done
 sleep 3
-
+if [ "$1" = "--skip-expanded" ]; then
+echo "Skipping expanded Installation"
+else
+echo "INSTALLING EXPANDED FOSS APPS....."
 #SOFTWARE INSTALLS.  SOME ARE FROM https://todon.nl/users/joenepraat/statuses/117360993990051238
     echo 'Installing F-Droid.'
     curl -o /tmp/F-Droid.apk https://f-droid.org/F-Droid.apk
@@ -316,10 +323,7 @@ sleep 3
     curl -L -o /tmp/waterfox.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${waterfoxversion}"/fenix-waterfox-arm64-v8a-release.apk
     adb install /tmp/waterfox.apk
 
-if [ "$1" = "--skip-expanded" ]; then
-echo "Skipping expanded Installation"
-else
-echo "INSTALLING EXPANDED FOSS APPS....."
+
     #hardlinked latest version
     echo 'Servo Browser.'
     curl -L -o /tmp/servo.apk https://download.servo.org/nightly/android/servo-aarch64-android.apk
