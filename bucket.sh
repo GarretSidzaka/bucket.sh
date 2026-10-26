@@ -301,11 +301,12 @@ echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
 adb shell pm uninstall -k --user 0 "$i"
 done
 
-remaining="$(adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|aura|playsimple|ironsrc|amazon|twitter|particlenews|swish|youtube|netflix|tripledot|com.att|vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)"
-echo "${remaining[@]}"
-for pkg in "${remaining[@]}"; do
-    echo "Uninstalling: ${pkg}"
-    adb shell pm uninstall -k --user 0 "${pkg}"
+#remaining="$(adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|aura|playsimple|ironsrc|amazon|twitter|particlenews|swish|youtube|netflix|tripledot|com.att|vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)"
+#echo "${remaining[@]}"
+#for i in "${remaining[@]}"; do
+for i in "${adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|aura|playsimple|ironsrc|amazon|twitter|particlenews|swish|youtube|netflix|tripledot|com.att|vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)"; do
+    echo "Uninstalling: ${i}"
+    adb shell pm uninstall -k --user 0 "${i}"
    sleep 1
 done
 fi
