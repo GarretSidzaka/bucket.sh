@@ -299,7 +299,7 @@ for i in "${target_package_list[@]}"; do
 echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
 adb shell pm uninstall -k --user 0 "$i"
 done
-remaining=$(adb shell pm list packages | grep -iE 'instagram|candy|whatsap|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.vivo|lowes|homedepot|booking|huub|vita|' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)
+remaining=$(adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.att|com.vivo|lowes|homedepot|booking|huub|vita|' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)
 for pkg in "${remaining[@]}"; do
     echo "Uninstalling: ${pkg}"
     adb shell pm uninstall -k --user 0 "${pkg}"
