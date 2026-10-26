@@ -17,6 +17,8 @@
 * MUST HAVE android-tools OR WHATEVER IT IS THAT GIVES YOU ADB.
 * USB CABLE TO AN ANDROID DEVICE IN USB DEBUGGING MODE.
 * MAKE BUCKET.SH EXECUTABLE.
-* RUN WITH --skip-expanded AS AN ARGUMENT FOR TRULY BARE MINIMAL ANDROID EXPERIENCE.
-
+* RUN WITH -a FOR AN ULTRA FAST DEBLOAT, TAKES FROM 15 SECONDS TO A MINUTE.   YOU CAN RUN THIS ON REPEAT WITH 
+```
+watch -n 30 '/usr/bin/sh ./bucket.sh -a'
+```
 <img width="700" height="394" alt="image" src="https://github.com/user-attachments/assets/1dd86582-21f1-4153-8a69-673cccc35d7e" />
