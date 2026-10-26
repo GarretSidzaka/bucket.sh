@@ -317,7 +317,7 @@ adb shell pm list packages | tee ./packages.txt
 echo "=========================================================================="
 printf "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
 echo ""
-if [[ $1 -ne '-a' ]]; then
+if [[ $1 != '-a' ]]; then
   read -n 1 -s -r -p "Press any key to continue, PRESS CONTROL-C TO CANCEL!"
   echo    # (optional) move to a new line
 else
