@@ -290,9 +290,6 @@ read -p "Do you bucket the hell out of your android and accept the risks?" -n 1 
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-if [ "$1" = "--skip-pruning" ]; then
-echo "Skipping app pruning completely!"
-else
 echo "Remove vendor bloat"
 for i in "${target_package_list[@]}"; do
 echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
