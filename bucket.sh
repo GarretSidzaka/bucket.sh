@@ -4,11 +4,9 @@
 #MORE DISCLAIMER: IF YOU THINK THIS SCRIPT MAKES ANDROID TRACKING DISABLED, I STRONGLY DOUBT IT.
 #MOREOVER:
 #MUST HAVE android-tools OR WHATEVER IT IS THAT GIVES YOU ADB
-#RUN WITH --skip-expanded AS AN ARGUMENT FOR TRULY BARE MINIMAL ANDROID EXPERIENCE.  
-#YOU CAN USE --skip-pruning TO NOT ACTUALLY DELETE STUFF, FOR WHATEVER REASON
-
+#PLEASE SUGGEST ANY ANDROID PACKAGES THAT ARE SLOP, SPYWARE, OR BLOATWARE TO GARRETSIDZAKA@PROTON.ME
 target_package_list=(
-PACKAGES FROM https://xdaforums.com/t/guide-list-of-bloatware-on-emui-safe-to-remove.3700814/ AND MORE
+#PACKAGES FROM https://xdaforums.com/t/guide-list-of-bloatware-on-emui-safe-to-remove.3700814/ AND MORE
 #com.google.android.gms.location.history
 #com.google.android.gms.supervision
 com.google.android.calculator
@@ -288,8 +286,10 @@ echo 'creating list of pre-installed packages'
 echo "=========================================================================="
 printf "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
 echo ""
-read -rp "Press enter bucket the hell out of your android, or Control-C to end script now."
-
+read -p "Do you bucket the hell out of your android and accept the risks?" -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
 if [ "$1" = "--skip-pruning" ]; then
 echo "Skipping app pruning completely!"
 else
@@ -306,11 +306,11 @@ done
 fi
 sleep 1
 
-
-
-if [ "$1" = "--skip-expanded" ]; then
-echo "Skipping expanded Installation"
-else
+echo "YOU ARE ABOUT TO INSTALL AN ENTIRE PHONE WORTH OF FREE AND OPEN SOURCE APPS.  JUST ONE THING, THIS CAN TAKE QUITE A WHILE, YA AND IM SURE NO ONE IS RATE LIMITING F-DROID... MHM."
+read -p "You can install stuff with adb install on your own time.  Do you want to spend up to an hour downloading apks? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
 echo "INSTALLING EXPANDED FOSS APPS....."
 #SOFTWARE INSTALLS.  SOME ARE FROM https://todon.nl/users/joenepraat/statuses/117360993990051238
     echo 'Installing F-Droid.'
@@ -351,9 +351,6 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'IzzyonDroid Repo'
     curl -L -o /tmp/izzyondroid_14.apk https://apt.izzysoft.de/fdroid/repo/in.sunilpaulmathew.izzyondroid_14.apk 
     adb install /tmp/izzyondroid_14.apk 
-    echo 'Fluffychat Matrix'
-    curl -L -o /tmp/fluffychat_3566.apk https://f-droid.org/repo/chat.fluffy.fluffychat_3566.apk 
-    adb install /tmp/fluffychat_3566.apk
     echo 'GhostCommander Files'
     curl -L -o /tmp/commander_479.apk https://f-droid.org/repo/com.ghostsq.commander_479.apk 
     adb install /tmp/commander_479.apk
@@ -423,6 +420,9 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'nora'
     curl -L -o /tmp/nora.apk https://f-droid.org/repo/jp.nonbili.nora_9504.apk
     adb install /tmp/nora.apk 
+    #echo 'Fluffychat Matrix'
+    #curl -L -o /tmp/fluffychat_3566.apk https://f-droid.org/repo/chat.fluffy.fluffychat_3566.apk 
+    #adb install /tmp/fluffychat_3566.apk
     #echo 'vlc'
     #curl -L -o /tmp/vlc.apk https://f-droid.org/repo/org.videolan.vlc_13070208.apk
     #adb install /tmp/vlc.apk 
@@ -432,6 +432,10 @@ echo "INSTALLING EXPANDED FOSS APPS....."
 fi
 
     
-read -rp "Press enter to reboot target android device, or Control-C to end script now without reboot."
-adb shell reboot
+read -p "Reboot android? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    adb shell reboot
+fi
 exit 0
