@@ -36,7 +36,6 @@ com.google.marvin.talkback
 com.google.android.onetimeinitializer
 com.google.android.contacts
 com.google.android.keep
-com.google.android.apps.books
 com.google.android.play.games
 com.google.android.deskclock
 com.google.android.inputmethod.latin
@@ -82,10 +81,8 @@ com.google.android.videos
 com.google.tango.measure
 com.google.android.talk
 com.android.hotwordenrollment.google
-com.google.android.googlequicksearchbox
 com.google.android.gm
 com.google.android.setupwizard
-com.google.android.videos
 com.google.android.youtube
 org.mipay.android.manager
 com.google.android.apps.youtube.music
@@ -160,7 +157,6 @@ cci.usage
 com.block.juggle
 com.att.csoiam.mobilekey
 com.att.dh
-com.att.iqi
 com.att.mobile.android.vvm
 com.att.personalcloud
 com.cricketwireless.minus
@@ -170,7 +166,7 @@ com.handmark.expressweather
 com.inmobi.weather
 com.metropcs.metrozone
 com.mizmowireless.acctmgt
-com.oem.euiccpartnerapp 
+com.oem.euiccpartnerapp
 com.oem.euiccpartnerapp.overlay.att
 com.oem.euiccpartnerapp.overlay.vzw
 com.oem.euiccpartnerapp.overlay.na
@@ -184,25 +180,19 @@ com.tmobile.dm.cm
 com.tmobile.dm.ms.services
 com.tmobile.echolocate
 com.tmobile.echolocate.system
-com.tmobile.m1
-com.tmobile.pr.adapt
-com.tmobile.rsusrv 
-com.tmobile.rsuapp 
 com.tmobile.rsuadapter.aidl
 com.tracfone.generic.mysites
 com.tracfone.preload.accountservices
 com.uscc.ecid
 com.verizon.mips.services
 com.verizon.remoteSimlock
-com.vcast.mediamanager
 com.vzw.apnlib
 com.vzw.ecid
-com.vzw.hss.myverizon
 securityandprivacy.android.verizon.vms
 com.ironsrc.aura.tmo
 com.trustonic.alpsservice
 com.trustonic.teeservice
-com.aura.jet.att 
+com.aura.jet.att
 com.aura.oobe.motorola
 com.aura.oobe.solutions
 ##MOTOROLLA DENY LIST
@@ -245,7 +235,7 @@ com.motorola.mobiledesktop.core
 #com.motorola.nfwlocationattribution
 #com.motorola.om
 com.motorola.omadm.att
-com.motorola.omadm.service 
+com.motorola.omadm.service
 com.motorola.omadm.vzw
 #com.motorola.paks
 #com.motorola.paks.notification
@@ -255,7 +245,6 @@ com.motorola.playautoinstallext
 com.motorola.setupwizard.devicesetup
 com.motorola.setupwizard.controller
 com.motorola.setupwizard.phoneservice
-com.motorola.setupwizard.devicesetup
 com.motorola.smartfeed
 com.motorola.spectrum.setup.extensions
 com.motorola.timeweatherwidget
@@ -266,15 +255,26 @@ com.motorola.vzw.cloudsetup
 com.motorola.vzw.phone.extensions
 com.motorola.vzw.settings.extensions
 com.motorola.vzw.voicemail.extensions
-com.motorola.vzw.pco.extensions.pcoreceiver 
-com.motorola.vzw.voicemail.extensions
+com.motorola.vzw.pco.extensions.pcoreceiver
 #TMOBILE APPS BLACKLIST
-#com.motorola.tmo.setupext
-#com.motorola.tmo.settingsext
+com.motorola.tmo.settingsext
+com.motorola.setup.overlay.tmo
+com.motorola.android.launcher.overlay.tmo.rcs.apptray
+com.motorola.android.launcher.overlay.tmonosim.rcs.apptray
+com.motorola.android.overlay.tmo
 com.tmobile.tuesdays
+com.android.wifi.resources.overlay.WifiTmoOverlay
+com.motorola.android.systemui.overlay.tmo
+com.android.providers.settings.overlay.tmo
+com.motorola.thermalservice.overlay.tmo
+com.motorola.android.settings.overlay.tmo
+com.motorola.android.providers.settings.overlay.tmo
+com.motorola.launcherconfig.overlay.tmo
+com.motorola.tmo.setupext
+com.motorola.android.server.telecom.overlay.tmo
+com.tmobile.vvm.application
 #OTHER CARRIERS
 com.motorola.tracfone.rsu
-#EMAIL YOUR DISGUSTING BUCKET OF KNOWN BAD PACKAGES TO GARRETSIDZAKA@PROTON.ME
 )
 command -v adb || {
 echo "adb not installed"
