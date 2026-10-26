@@ -173,11 +173,6 @@ com.oem.euiccpartnerapp.overlay.cc
 com.oem.euiccpartnerapp.overlay.br
 com.spectrum.cm.headless
 com.swishme.tracfone
-com.tmobile.dm.cm
-com.tmobile.dm.ms.services
-com.tmobile.echolocate
-com.tmobile.echolocate.system
-com.tmobile.rsuadapter.aidl
 com.tracfone.generic.mysites
 com.tracfone.preload.accountservices
 com.uscc.ecid
@@ -277,6 +272,11 @@ com.tmobile.pr.adapt
 com.tmobile.rsuadapter.qualcomm
 com.tmobile.rsuapp
 com.tmobile.rsusrv
+com.tmobile.dm.cm
+com.tmobile.dm.ms.services
+com.tmobile.echolocate
+com.tmobile.echolocate.system
+com.tmobile.rsuadapter.aidl
 #OTHER CARRIERS
 com.motorola.tracfone.rsu
 )
