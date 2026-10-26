@@ -188,10 +188,12 @@ com.motorola.vzw.provider
 com.motorola.android.launcher.overlay.amx
 com.motorola.android.providers.settings.overlay.dppnone
 com.motorola.setup.overlay.vzw
+com.motorola.ccc.notification
 com.motorola.launcherconfig.overlay.vzwpre
 com.motorola.extensions.tracfone
 com.mediatek.rsu.tfn
 com.uscc.ecid
+com.facebook.katana
 com.motorola.att.phone.extensions
 com.motorola.att.sim.extensions
 com.motorola.attvowifi
@@ -290,7 +292,6 @@ com.motorola.launcherconfig.overlay.tmo
 com.motorola.tmo.setupext
 com.motorola.android.server.telecom.overlay.tmo
 com.tmobile.vvm.application
-
 com.tmobile.pr.mytmobile
 com.tmobile.m1
 com.tmobile.pr.adapt
