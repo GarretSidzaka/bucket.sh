@@ -332,9 +332,8 @@ else
    done
 
 fi
-if [[ $1 = '-a' ]]
-then
-exit 0
+if [[ $1 = '-a' ]]; then
+  exit 0
 else
 
 echo "YOU ARE ABOUT TO INSTALL AN ENTIRE PHONE WORTH OF FREE AND OPEN SOURCE APPS.  JUST ONE THING, THIS CAN TAKE QUITE A WHILE, YA AND IM SURE NO ONE IS RATE LIMITING F-DROID... MHM."
