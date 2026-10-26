@@ -189,13 +189,13 @@ com.aura.jet.att
 com.aura.oobe.motorola
 com.aura.oobe.solutions
 ##MOTOROLLA DENY LIST
-#com.motorola.help
-#com.motorola.moto
-#com.motorola.motocare
+com.motorola.help
+com.motorola.moto
+com.motorola.motocare
 com.motorola.android.fmradio
 com.motorola.fmplayer
 com.motorola.motocameradesktop
-#com.motorola.spaces
+com.motorola.spaces
 #com.motorola.account
 com.motorola.aiservices
 com.motorola.android.buacloudcontactadapter
