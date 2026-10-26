@@ -291,7 +291,7 @@ echo 'creating list of pre-installed packages'
 echo "=========================================================================="
 printf "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
 echo ""
-read -p "Do you bucket the hell out of your android and accept the risks?" -n 1 -r
+read -p "Do you bucket the hell out of your android and accept the risks? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -309,7 +309,7 @@ fi
 sleep 1
 
 echo "YOU ARE ABOUT TO INSTALL AN ENTIRE PHONE WORTH OF FREE AND OPEN SOURCE APPS.  JUST ONE THING, THIS CAN TAKE QUITE A WHILE, YA AND IM SURE NO ONE IS RATE LIMITING F-DROID... MHM."
-read -p "You can install stuff with adb install on your own time.  Do you want to spend up to an hour downloading apks? " -n 1 -r
+read -p "You can install stuff with adb install on your own time.  Do you want to spend up to an hour downloading apks? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -434,7 +434,7 @@ echo "INSTALLING EXPANDED FOSS APPS....."
 fi
 
     
-read -p "Reboot android? " -n 1 -r
+read -p "Reboot android? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
