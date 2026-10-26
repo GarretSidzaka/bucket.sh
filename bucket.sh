@@ -301,13 +301,14 @@ echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
 adb shell pm uninstall -k --user 0 "$i"
 done
 
-remaining=$(adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|com.aura|in.playsimple|com.ironsrc|amazon|twitter|com.particlenews|com.swish|youtube|netflix|com.tripledot|com.att|com.vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)
+remaining="$(adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|aura|playsimple|ironsrc|amazon|twitter|particlenews|swish|youtube|netflix|tripledot|com.att|vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)"
+echo "${remaining[@]}"
 for pkg in "${remaining[@]}"; do
     echo "Uninstalling: ${pkg}"
     adb shell pm uninstall -k --user 0 "${pkg}"
+   sleep 1
 done
 fi
-sleep 1
 
 echo "YOU ARE ABOUT TO INSTALL AN ENTIRE PHONE WORTH OF FREE AND OPEN SOURCE APPS.  JUST ONE THING, THIS CAN TAKE QUITE A WHILE, YA AND IM SURE NO ONE IS RATE LIMITING F-DROID... MHM."
 read -p "You can install stuff with adb install on your own time.  Do you want to spend up to an hour downloading apks? (y/n)" -n 1 -r
