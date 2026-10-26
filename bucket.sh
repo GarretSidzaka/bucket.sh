@@ -226,12 +226,12 @@ com.motorola.mobiledesktop.core
 #com.motorola.motosignature.app
 #com.motorola.motosignature2.app
 #com.motorola.nfwlocationattribution
-#com.motorola.om
+com.motorola.om
 com.motorola.omadm.att
 com.motorola.omadm.service
 com.motorola.omadm.vzw
-#com.motorola.paks
-#com.motorola.paks.notification
+com.motorola.paks
+com.motorola.paks.notification
 com.motorola.personalize
 com.motorola.playautoinstallext
 #com.motorola.setup
