@@ -311,30 +311,31 @@ echo "adb not installed"
 exit 1
 }
 
+
 echo 'creating list of pre-installed packages'
-   adb shell pm list packages | tee ./packages.txt
+adb shell pm list packages | tee ./packages.txt
 echo "=========================================================================="
 printf "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
 echo ""
-read -p "Do you bucket the hell out of your android and accept the risks? (y/n)" -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-echo "Remove vendor bloat"
-for i in "${target_package_list[@]}"; do
-echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
-adb shell pm uninstall -k --user 0 "$i"
-done
+if [[ $1 -ne '-a' ]]; then
+  read -n 1 -s -r -p "Press any key to continue, PRESS CONTROL-C TO CANCEL!"
+  echo    # (optional) move to a new line
+else
+   for i in "${target_package_list[@]}"; do
+      echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
+      adb shell pm uninstall -k --user 0 "$i"
+   done
+   for i in $(adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|aura|playsimple|ironsrc|amazon|twitter|particlenews|swish|youtube|netflix|tripledot|com.att|vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2); do
+      echo "Uninstalling: ${i}"
+      adb shell pm uninstall -k --user 0 "${i}"
+      sleep 1
+   done
 
-#remaining="$(adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|aura|playsimple|ironsrc|amazon|twitter|particlenews|swish|youtube|netflix|tripledot|com.att|vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)"
-#echo "${remaining[@]}"
-#for i in "${remaining[@]}"; do
-for i in $(adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|aura|playsimple|ironsrc|amazon|twitter|particlenews|swish|youtube|netflix|tripledot|com.att|vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2); do
-    echo "Uninstalling: ${i}"
-    adb shell pm uninstall -k --user 0 "${i}"
-   sleep 1
-done
 fi
+if [[ $1 = '-a' ]]
+then
+exit 0
+else
 
 echo "YOU ARE ABOUT TO INSTALL AN ENTIRE PHONE WORTH OF FREE AND OPEN SOURCE APPS.  JUST ONE THING, THIS CAN TAKE QUITE A WHILE, YA AND IM SURE NO ONE IS RATE LIMITING F-DROID... MHM."
 read -p "You can install stuff with adb install on your own time.  Do you want to spend up to an hour downloading apks? (y/n)" -n 1 -r
@@ -460,7 +461,7 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     #curl -L -o /tmp/orion.apk https://f-droid.org/repo/universe.constellation.orion.viewer_2506.apk
     #adb install /tmp/orion.apk   
 fi
-
+fi
     
 read -p "Reboot android? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
