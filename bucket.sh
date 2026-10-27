@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 #BUCKET.SH
 #DISCLAIMER: CANNOT BE HELD LIABLE FOR YOU RUNNING THIS ON YOUR DEVICE AND BRICKING IT.
-#MORE DISCLAIMER: IF YOU THINK THIS SCRIPT MAKES ANDROID TRACKING DISABLED, I STRONGLY DOUBT IT.
-#MOREOVER:
-#MUST HAVE android-tools OR WHATEVER IT IS THAT GIVES YOU ADB
-#PLEASE SUGGEST ANY ANDROID PACKAGES THAT ARE SLOP, SPYWARE, OR BLOATWARE TO GARRETSIDZAKA@PROTON.ME
 target_package_list=(
-#PACKAGES FROM https://xdaforums.com/t/guide-list-of-bloatware-on-emui-safe-to-remove.3700814/ AND MORE
 com.google.android.gms.location.history
 com.google.android.gms.supervision
 com.google.android.gms
@@ -54,7 +49,6 @@ com.google.android.health.connect.backuprestore
 com.google.android.healthconnect.controller
 com.google.android.apps.wellbeing
 com.google.android.apps.safetyhub
-#ALLWINNER SPECIFIC PACKAGES
 com.dajingtech.update
 com.softwinner.update
 com.softwinner.android.gmsintegration
@@ -70,7 +64,6 @@ com.softwinner.videoplayer
 com.softwinner.screenshot
 com.softwinner.qrscanner
 com.softwinner.timerswitch
-#BACKAGES FROM DEBLOAT SCRIPT https://gist.github.com/heywoodlh/12195025d8bfc4d4dc8cb0a1dfec4df1
 com.lmi.motorola.rescuesecurity
 com.facebook.katana
 com.facebook.appmanager
@@ -149,7 +142,6 @@ com.sprint.ms.cdm
 com.sprint.ms.smf.services
 com.sprint.ce.updater
 com.sprint.w.installer
-#MORE BLOATWARE
 cci.usage
 com.block.juggle
 com.att.csoiam.mobilekey
@@ -208,7 +200,6 @@ com.trustonic.teeservice
 com.aura.jet.att
 com.aura.oobe.motorola
 com.aura.oobe.solutions
-##MOTOROLLA DENY LIST
 com.motorola.help
 com.motorola.moto
 com.motorola.motocare
@@ -216,10 +207,8 @@ com.motorola.android.fmradio
 com.motorola.fmplayer
 com.motorola.motocameradesktop
 com.motorola.spaces
-#com.motorola.account
 com.motorola.aiservices
 com.motorola.android.buacloudcontactadapter
-#com.motorola.android.contacts.overlay.vzw
 com.motorola.contacts.preloadcontacts.overlay.vzw
 com.motorola.android.nativedropboxagent
 com.motorola.android.provisioning
@@ -242,10 +231,6 @@ com.motorola.livewallpaper3
 com.motorola.mobiledesktop
 com.motorola.mobiledesktop.core
 com.motorola.motocit
-#com.motorola.motosecurecore
-#com.motorola.motosignature.app
-#com.motorola.motosignature2.app
-#com.motorola.nfwlocationattribution
 com.motorola.om
 com.motorola.omadm.att
 com.motorola.omadm.service
@@ -260,22 +245,17 @@ com.motorola.bach.modemstats
 com.motorola.visualvoicemail
 com.motorola.dimo
 com.motorola.brapps
-#com.motorola.setup
 com.motorola.setupwizard.devicesetup
 com.motorola.setupwizard.controller
 com.motorola.setupwizard.phoneservice
 com.motorola.smartfeed
 com.motorola.spectrum.setup.extensions
 com.motorola.timeweatherwidget
-#com.motorola.visualvoicemail
-#com.motorola.wifi.motowifimetrics
-#VERIZON APPS - MIGHT NEED TO KEEP IF YOU USE THEM
 com.motorola.vzw.cloudsetup
 com.motorola.vzw.phone.extensions
 com.motorola.vzw.settings.extensions
 com.motorola.vzw.voicemail.extensions
 com.motorola.vzw.pco.extensions.pcoreceiver
-#TMOBILE APPS BLACKLIST
 com.motorola.tmo.settingsext
 com.motorola.setup.overlay.tmo
 com.motorola.android.launcher.overlay.tmo.rcs.apptray
@@ -303,8 +283,15 @@ com.tmobile.dm.ms.services
 com.tmobile.echolocate
 com.tmobile.echolocate.system
 com.tmobile.rsuadapter.aidl
-#OTHER CARRIERS
 com.motorola.tracfone.rsu
+#SOME APPS TO CONSIDER KEEPING
+#com.motorola.setup
+#com.motorola.visualvoicemail
+#com.motorola.wifi.motowifimetrics
+#com.motorola.motosecurecore
+#com.motorola.motosignature.app
+#com.motorola.motosignature2.app
+#com.motorola.nfwlocationattribution
 )
 command -v adb || {
 echo "adb not installed"
