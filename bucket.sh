@@ -313,7 +313,6 @@ com.verizon.loginengine.unbranded
 com.verizon.obdm
 com.vzw.apnservice
 com.xfinitymobile.cometcarrierservice
-Unneeded Manufacturer Telemetry & Extra Utilities
 com.lenovo.lsf.user
 udc.lenovo.com.udclient
 com.motorola.ccc.devicemanagement
