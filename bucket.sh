@@ -212,7 +212,6 @@ com.motorola.android.provisioning
 com.motorola.android.providers.chromehomepage
 com.motorola.appforecast
 com.motorola.audiorecorder
-com.motorola.camera3.content.ai
 com.motorola.bug2go
 com.motorola.ccc.ota
 com.motorola.comcast.settings.extensions
@@ -326,7 +325,6 @@ com.dolby.daxservice
 com.motorola.actions
 com.motorola.gesture
 com.motorola.actions.overlay
-com.motorola.camera3
 #SOME APPS TO CONSIDER KEEPING
 #com.motorola.setup
 #com.motorola.wifi.motowifimetrics
@@ -335,6 +333,10 @@ com.motorola.camera3
 #com.motorola.motosignature2.app
 #com.motorola.nfwlocationattribution
 #com.google.android.apps.adm
+com.motorola.camera3
+com.motorola.camera3.content.ai
+
+
 )
 command -v adb || {
 echo "adb not installed"
@@ -437,12 +439,6 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'Fossify Gallery'
     curl -L -o /tmp/gallery_28.apk https://f-droid.org/repo/org.fossify.gallery_28.apk 
     adb install /tmp/gallery_28.apk
-    echo 'Fossify Contacts'
-    curl -L -o /tmp/contacts_13.apk https://f-droid.org/repo/org.fossify.contacts_13.apk 
-    adb install /tmp/contacts_13.apk 
-    echo 'Fossify Camera'
-    curl -L -o /tmp/camera_11.apk https://f-droid.org/repo/org.fossify.camera_11.apk 
-    adb install /tmp/camera_11.apk 
     echo 'ntfy'
     curl -L -o /tmp/ntfy.apk https://f-droid.org/repo/io.heckel.ntfy_63.apk
     adb install /tmp/ntfy.apk 
@@ -452,9 +448,6 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'thunderbird'
     curl -L -o /tmp/thunderbird.apk https://f-droid.org/repo/net.thunderbird.android_33.apk
     adb install /tmp/thunderbird.apk 
-    echo 'trackercontrol'
-    curl -L -o /tmp/trackercontrol.apk https://f-droid.org/repo/net.kollnig.missioncontrol.fdroid_2026080501.apk
-    adb install /tmp/trackercontrol.apk 
     echo 'pipepipe'
     curl -L -o /tmp/pipepipe.apk https://f-droid.org/repo/InfinityLoop1309.NewPipeEnhanced_110904.apk
     adb install /tmp/pipepipe.apk
@@ -479,15 +472,24 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     echo 'nora'
     curl -L -o /tmp/nora.apk https://f-droid.org/repo/jp.nonbili.nora_9504.apk
     adb install /tmp/nora.apk 
-    #echo 'Fluffychat Matrix'
-    #curl -L -o /tmp/fluffychat_3566.apk https://f-droid.org/repo/chat.fluffy.fluffychat_3566.apk 
-    #adb install /tmp/fluffychat_3566.apk
-    #echo 'vlc'
-    #curl -L -o /tmp/vlc.apk https://f-droid.org/repo/org.videolan.vlc_13070208.apk
-    #adb install /tmp/vlc.apk 
-    #echo 'orion'
-    #curl -L -o /tmp/orion.apk https://f-droid.org/repo/universe.constellation.orion.viewer_2506.apk
-    #adb install /tmp/orion.apk   
+    echo 'de1984'
+    curl -L -o /tmp/de1984.apk https://apt.izzysoft.de/fdroid/repo/io.github.dorumrr.de1984_53.apk
+    adb install /tmp/de1984.apk 
+    echo 'sable'
+    curl -L -o /tmp/sable.apk https://apt.izzysoft.de/fdroid/repo/moe.sable.client_20010062.apk
+    adb install /tmp/sable.apk 
+    echo 'openscan'
+    curl -L -o /tmp/openscan.apk https://apt.izzysoft.de/fdroid/repo/com.ethereal.openscan_2010.apk
+    adb install /tmp/openscan.apk 
+    echo 'paperize'
+    curl -L -o /tmp/paperize.apk https://apt.izzysoft.de/fdroid/repo/com.anthonyla.paperize_58.apk
+    adb install /tmp/paperize.apk 
+    echo 'filemanager'
+    curl -L -o /tmp/filemanager.apk https://f-droid.org/repo/org.fossify.filemanager_14.apk
+    adb install /tmp/filemanager.apk 
+    echo 'clock'
+    curl -L -o /tmp/clock.apk https://f-droid.org/repo/org.fossify.clock_10.apk
+    adb install /tmp/clock.apk     
 fi
 fi
     
