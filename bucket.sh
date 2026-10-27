@@ -8,6 +8,7 @@ com.google.android.gms
 com.google.android.calculator
 com.google.android.apps.messaging
 com.google.android.apps.chromecast.app
+com.google.android.apps.adm
 com.google.android.googlequicksearchbox
 com.google.android.apps.docs
 com.google.android.apps.googleassistant
