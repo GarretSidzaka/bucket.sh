@@ -333,8 +333,8 @@ com.motorola.actions.overlay
 #com.motorola.motosignature2.app
 #com.motorola.nfwlocationattribution
 #com.google.android.apps.adm
-com.motorola.camera3
-com.motorola.camera3.content.ai
+#com.motorola.camera3
+#com.motorola.camera3.content.ai
 
 
 )
