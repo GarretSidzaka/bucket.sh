@@ -26,3 +26,8 @@
 watch -n 30 '/usr/bin/sh ./bucket.sh -a'
 ```
 <img width="700" height="394" alt="image" src="https://github.com/user-attachments/assets/1dd86582-21f1-4153-8a69-673cccc35d7e" />
+
+## ROLLBACK
+
+<img width="793" height="190" alt="image" src="https://github.com/user-attachments/assets/45514e41-35b8-4921-9843-f8b9f3bd82b5" />
+
