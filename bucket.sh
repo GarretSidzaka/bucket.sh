@@ -2,6 +2,10 @@
 #BUCKET.SH
 #DISCLAIMER: CANNOT BE HELD LIABLE FOR YOU RUNNING THIS ON YOUR DEVICE AND BRICKING IT.
 target_package_list=(
+com.google.android.projection.gearhead
+com.google.android.embedded.projection
+com.google.android.apps.auto.carservices
+com.google.android.carassistant
 com.google.android.gms.location.history
 com.google.android.gms.supervision
 com.google.android.gms
