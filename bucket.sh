@@ -8,7 +8,6 @@ com.google.android.gms
 com.google.android.calculator
 com.google.android.apps.messaging
 com.google.android.apps.chromecast.app
-com.google.android.apps.adm
 com.google.android.googlequicksearchbox
 com.google.android.apps.docs
 com.google.android.apps.googleassistant
@@ -335,6 +334,7 @@ com.motorola.camera3
 #com.motorola.motosignature.app
 #com.motorola.motosignature2.app
 #com.motorola.nfwlocationattribution
+#com.google.android.apps.adm
 )
 command -v adb || {
 echo "adb not installed"
