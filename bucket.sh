@@ -169,14 +169,11 @@ com.oem.euiccpartnerapp.overlay.tmo
 com.oem.euiccpartnerapp.overlay.cc
 com.oem.euiccpartnerapp.overlay.br
 com.spectrum.cm.headless
-com.swishme.tracfone
 com.amazon.mShop.android.shopping
 com.instagram.android
-com.tracfone.preload.accountservices
 com.securityandprivacy.android.verizon.vms
 com.payjoy.access
 com.motorola.android.overlay.payjoy
-com.tracfone.generic.mysites
 com.motorola.sprint.setupext
 com.motorola.vzw.provider
 com.motorola.android.launcher.overlay.amx
@@ -184,7 +181,6 @@ com.motorola.android.providers.settings.overlay.dppnone
 com.motorola.setup.overlay.vzw
 com.motorola.ccc.notification
 com.motorola.launcherconfig.overlay.vzwpre
-com.motorola.extensions.tracfone
 com.mediatek.rsu.tfn
 com.uscc.ecid
 com.motorola.att.phone.extensions
@@ -282,7 +278,6 @@ com.tmobile.dm.ms.services
 com.tmobile.echolocate
 com.tmobile.echolocate.system
 com.tmobile.rsuadapter.aidl
-com.motorola.tracfone.rsu
 com.aura.oobe.att
 com.aura.oobe.dish
 com.aura.appadvisor.att
@@ -361,7 +356,7 @@ else
       echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
       adb shell pm uninstall -k --user 0 "$i"
    done
-   regex_package_list="$(adb shell pm list packages | grep -iE 'instagram|trustsonic|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|aura|playsimple|ironsrc|amazon|twitter|particlenews|swish|youtube|netflix|tripledot|com.att|vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)"
+   regex_package_list="$(adb shell pm list packages | grep -iE 'instagram|trustsonic|tracfone|candy|mizmo|whatsap|cricket|vzw|juggle|particlenews|tripledot|pinterest|playsimple|candycrush|temu|doordash|facebook|mahjong|adfone|meta|glance|dish|linkedin|snapchat|tiktok|aura|playsimple|ironsrc|amazon|twitter|particlenews|swish|youtube|netflix|tripledot|com.att|vivo|lowes|homedepot|booking|huub|vita' | grep -viE 'com.motorola|faceunlock|android' |  cut -d ':' -f 2)"
    for i in "${regex_package_list[@]}"; do
       echo "Uninstalling: ${i}"
       adb shell pm uninstall -k --user 0 "${i}"
