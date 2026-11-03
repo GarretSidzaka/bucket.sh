@@ -650,6 +650,11 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     curl -L -o ~/tmp/clock.apk https://f-droid.org/repo/org.fossify.clock_10.apk
 	fi
     adb install ~/tmp/clock.apk 
+	echo 'simple text editor'
+	if [[ ! -f ~/tmp/textpad_63.apk ]]; then
+    curl -L -o ~/tmp/textpad_63.apk https://f-droid.org/repo/com.maxistar.textpad_63.apk
+	fi
+    adb install ~/tmp/textpad_63.apk 
 #github newest verson
 #    echo 'Redreader'
 #    redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
