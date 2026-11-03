@@ -474,120 +474,186 @@ then
 echo "INSTALLING EXPANDED FOSS APPS....."
 #SOFTWARE INSTALLS.  SOME ARE FROM https://todon.nl/users/joenepraat/statuses/117360993990051238
     echo 'Installing F-Droid.'
+	if [[ ! -f ~/tmp/F-Droid.apk ]]; then
     curl -o ~/tmp/F-Droid.apk https://f-droid.org/F-Droid.apk
+	fi
     adb install ~/tmp/F-Droid.apk
     echo 'Installing unlauncher.'
+	if [[ ! -f ~/tmp/unlauncher.apk ]]; then
     curl -o ~/tmp/unlauncher.apk https://f-droid.org/repo/com.jkuester.unlauncher_18.apk
+	fi
     adb install ~/tmp/unlauncher.apk
     echo 'Heliboard Keyboard'
+	if [[ ! -f ~/tmp/keyboard_4101.apk ]]; then
     curl -L -o ~/tmp/keyboard_4101.apk https://f-droid.org/repo/helium314.keyboard_4101.apk 
+	fi
     adb install ~/tmp/keyboard_4101.apk
     echo 'Installing Waterfox Browser.'
-    shizuversion="$(curl -s https://api.github.com/thejaustin/ShizukuPlus/releases/latest  | grep browser_download_url | cut -d '"' -f 4 | grep arm64 | cut -d '/' -f 8)"
-    curl -L -o ~/tmp/shizukuplus.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${shizuversion}"/fenix-waterfox-arm64-v8a-release.apk
-    https://github.com/thejaustin/ShizukuPlus/releases/download/13.7.0.r3216/Shizuku+-13.7.0.r3216.apk
-    https://github.com/thejaustin/ShizukuPlus/releases/tag/13.7.0.r3216
-    adb install ~/tmp/shizukuplus.apk
+	if [[ ! -f ~/tmp/waterfox.apk ]]; then
+    waterfoxversion="$(curl -s https://api.github.com/repos/BrowserWorks/waterfox-android/releases/latest | grep browser_download_url | cut -d '"' -f 4 | grep arm64 | cut -d '/' -f 8)"
+    curl -L -o /tmp/waterfox.apk https://github.com/BrowserWorks/waterfox-android/releases/download/"${waterfoxversion}"/fenix-waterfox-arm64-v8a-release.apk
+	fi
+    adb install /tmp/waterfox.apk
     echo 'Installing Shizuku+.'
+	if [[ ! -f ~/tmp/shizukuplus.apk ]]; then
     curl -L -o ~/tmp/shizukuplus.apk "https://github.com/thejaustin/ShizukuPlus/releases/download/13.7.0.r3216/Shizuku+-13.7.0.r3216.apk"
+	fi
     adb install ~/tmp/shizukuplus.apk
     echo 'Servo Browser.'
+	if [[ ! -f ~/tmp/servo.apk ]]; then
     curl -L -o ~/tmp/servo.apk https://download.servo.org/nightly/android/servo-aarch64-android.apk
+	fi
     adb install ~/tmp/servo.apk 
-    
-    #github newest version
+    echo 'Aurora Store'
+	if [[ ! -f ~/tmp/aurora.apk ]]; then
+    curl -L -o ~/tmp/aurora.apk https://f-droid.org/repo/com.aurora.store_76.apk 
+	fi
+    adb install ~/tmp/aurora.apk
+    echo 'Aegis Authenticator'
+	if [[ ! -f ~/tmp/aegis_82.apk ]]; then
+    curl -L -o ~/tmp/aegis_82.apk https://f-droid.org/repo/com.beemdevelopment.aegis_82.apk 
+	fi
+    adb install ~/tmp/aegis_82.apk 
+    echo 'Breezy Weather'
+	if [[ ! -f ~/tmp/breezyweather_60202.apk ]]; then
+    curl -L -o ~/tmp/breezyweather_60202.apk https://f-droid.org/repo/org.breezyweather_60202.apk 
+	fi
+    adb install ~/tmp/breezyweather_60202.apk
+    echo 'IzzyonDroid Repo'
+	if [[ ! -f ~/tmp/izzyondroid_14.apk ]]; then
+    curl -L -o ~/tmp/izzyondroid_14.apk https://apt.izzysoft.de/fdroid/repo/in.sunilpaulmathew.izzyondroid_14.apk 
+	fi
+    adb install ~/tmp/izzyondroid_14.apk 
+    echo 'GhostCommander Files'
+	if [[ ! -f ~/tmp/commander_479.apk ]]; then
+    curl -L -o ~/tmp/commander_479.apk https://f-droid.org/repo/com.ghostsq.commander_479.apk 
+	fi
+    adb install ~/tmp/commander_479.apk
+    echo 'Spamblocker Caller'
+	if [[ ! -f ~/tmp/spamblocker_614.apk ]]; then
+    curl -L -o ~/tmp/spamblocker_614.apk https://f-droid.org/repo/dev.kerballone.spamblocker_614.apk 
+	fi
+    adb install ~/tmp/spamblocker_614.apk
+    echo 'Voice Audiobooks'
+	if [[ ! -f ~/tmp/audiobook_5406001.apk ]]; then
+    curl -L -o ~/tmp/audiobook_5406001.apk https://f-droid.org/repo/de.ph1b.audiobook_5406001.apk 
+	fi
+    adb install ~/tmp/audiobook_5406001.apk 
+    echo 'Wikipedia'
+	if [[ ! -f ~/tmp/wikipedia_50606.apk ]]; then
+    curl -L -o ~/tmp/wikipedia_50606.apk https://f-droid.org/repo/org.wikipedia_50606.apk 
+	fi
+    adb install ~/tmp/wikipedia_50606.apk
+    echo 'Fedilab'
+	if [[ ! -f ~/tmp/mastodon_570.apk ]]; then
+    curl -L -o ~/tmp/mastodon_570.apk https://f-droid.org/repo/fr.gouv.etalab.mastodon_570.apk 
+	fi
+    adb install ~/tmp/mastodon_570.apk 
+    echo 'RadioDroid'
+	if [[ ! -f ~/tmp/radiodroid2_96.apk ]]; then
+    curl -L -o ~/tmp/radiodroid2_96.apk https://f-droid.org/repo/net.programmierecke.radiodroid2_96.apk 
+	fi
+    adb install ~/tmp/radiodroid2_96.apk
+    echo 'Sky Map'
+	if [[ ! -f ~/tmp/stardroid_1751.apk ]]; then
+    curl -L -o ~/tmp/stardroid_1751.apk https://f-droid.org/repo/com.google.android.stardroid_1751.apk 
+	fi
+    adb install ~/tmp/stardroid_1751.apk 
+    echo 'Fossify Messages'
+	if [[ ! -f ~/tmp/messages_23.apk ]]; then
+    curl -L -o ~/tmp/messages_23.apk https://f-droid.org/repo/org.fossify.messages_23.apk 
+	fi
+    adb install ~/tmp/messages_23.apk
+    echo 'Fossify Gallery'
+	if [[ ! -f ~/tmp/gallery_28.apk ]]; then
+    curl -L -o ~/tmp/gallery_28.apk https://f-droid.org/repo/org.fossify.gallery_28.apk 
+	fi
+    adb install ~/tmp/gallery_28.apk
+    echo 'ntfy'
+	if [[ ! -f ~/tmp/ntfy.apk ]]; then
+    curl -L -o ~/tmp/ntfy.apk https://f-droid.org/repo/io.heckel.ntfy_63.apk
+	fi
+    adb install ~/tmp/ntfy.apk 
+    echo 'pocketpaint'
+	if [[ ! -f ~/tmp/pocketpaint.apk ]]; then
+    curl -L -o ~/tmp/pocketpaint.apk https://f-droid.org/repo/org.catrobat.paintroid_54.apk
+	fi
+    adb install ~/tmp/pocketpaint.apk 
+    echo 'thunderbird'
+	if [[ ! -f ~/tmp/thunderbird.apk ]]; then
+    curl -L -o ~/tmp/thunderbird.apk https://f-droid.org/repo/net.thunderbird.android_33.apk
+	fi
+    adb install ~/tmp/thunderbird.apk 
+    echo 'pipepipe'
+	if [[ ! -f ~/tmp/pipepipe.apk ]]; then
+    curl -L -o ~/tmp/pipepipe.apk https://f-droid.org/repo/InfinityLoop1309.NewPipeEnhanced_110904.apk
+	fi
+    adb install ~/tmp/pipepipe.apk
+    echo 'wifianalyzer'
+	if [[ ! -f ~/tmp/wifianalyzer.apk ]]; then
+    curl -L -o ~/tmp/wifianalyzer.apk https://f-droid.org/repo/com.vrem.wifianalyzer_72.apk
+	fi
+    adb install ~/tmp/wifianalyzer.apk 
+    echo 'comaps'
+	if [[ ! -f ~/tmp/comaps.apk ]]; then
+    curl -L -o ~/tmp/comaps.apk https://f-droid.org/repo/app.comaps.fdroid_26100519.apk
+	fi
+    adb install ~/tmp/comaps.apk 
+    echo 'episteme'
+	if [[ ! -f ~/tmp/episteme.apk ]]; then
+    curl -L -o ~/tmp/episteme.apk https://f-droid.org/repo/com.aryan.reader.oss_62.apk
+	fi
+    adb install ~/tmp/episteme.apk 
+    echo 'scrubpony'
+	if [[ ! -f ~/tmp/scrubpony.apk ]]; then
+    curl -L -o ~/tmp/scrubpony.apk https://f-droid.org/repo/com.norsehorse.scrubpony_6.apk
+	fi
+    adb install ~/tmp/scrubpony.apk 
+    echo 'syncthingfork'
+	if [[ ! -f ~/tmp/syncthingfork.apk ]]; then
+    curl -L -o ~/tmp/syncthingfork.apk https://f-droid.org/repo/com.github.catfriend1.syncthingfork_2010500.apk
+	fi
+    adb install ~/tmp/syncthingfork.apk 
+    echo 'nora'
+	if [[ ! -f ~/tmp/nora.apk ]]; then
+    curl -L -o ~/tmp/nora.apk https://f-droid.org/repo/jp.nonbili.nora_9504.apk
+	fi
+    adb install ~/tmp/nora.apk 
+    echo 'de1984'
+	if [[ ! -f ~/tmp/de1984.apk ]]; then
+    curl -L -o ~/tmp/de1984.apk https://apt.izzysoft.de/fdroid/repo/io.github.dorumrr.de1984_53.apk
+	fi
+    adb install ~/tmp/de1984.apk 
+    echo 'sable'
+	if [[ ! -f ~/tmp/sable.apk ]]; then
+    curl -L -o ~/tmp/sable.apk https://apt.izzysoft.de/fdroid/repo/moe.sable.client_20010062.apk
+	fi
+    adb install ~/tmp/sable.apk 
+    echo 'openscan'
+	if [[ ! -f ~/tmp/openscan.apk ]]; then
+    curl -L -o ~/tmp/openscan.apk https://apt.izzysoft.de/fdroid/repo/com.ethereal.openscan_2010.apk
+	fi
+    adb install ~/tmp/openscan.apk 
+    echo 'paperize'
+	if [[ ! -f ~/tmp/paperize.apk ]]; then
+    curl -L -o ~/tmp/paperize.apk https://apt.izzysoft.de/fdroid/repo/com.anthonyla.paperize_58.apk
+	fi
+    adb install ~/tmp/paperize.apk 
+    echo 'filemanager'
+	if [[ ! -f ~/tmp/filemanager.apk ]]; then
+    curl -L -o ~/tmp/filemanager.apk https://f-droid.org/repo/org.fossify.filemanager_14.apk
+	fi
+    adb install ~/tmp/filemanager.apk 
+    echo 'clock'
+	if [[ ! -f ~/tmp/clock.apk ]]; then
+    curl -L -o ~/tmp/clock.apk https://f-droid.org/repo/org.fossify.clock_10.apk
+	fi
+    adb install ~/tmp/clock.apk 
+#github newest verson
 #    echo 'Redreader'
 #    redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
 #    curl -L -o ~/tmp/redreader.apk https://github.com/QuantumBadger/RedReader/releases/download/"${redreaderversion}"/RedReader-"${redreaderversion}".apk
 #    adb install ~/tmp/redreader.apk
-
-    echo 'Aurora Store'
-    curl -L -o ~/tmp/aurora.apk https://f-droid.org/repo/com.aurora.store_76.apk 
-    adb install ~/tmp/aurora.apk
-    echo 'Aegis Authenticator'
-    curl -L -o ~/tmp/aegis_82.apk https://f-droid.org/repo/com.beemdevelopment.aegis_82.apk 
-    adb install ~/tmp/aegis_82.apk 
-    echo 'Breezy Weather'
-    curl -L -o ~/tmp/breezyweather_60202.apk https://f-droid.org/repo/org.breezyweather_60202.apk 
-    adb install ~/tmp/breezyweather_60202.apk
-    echo 'IzzyonDroid Repo'
-    curl -L -o ~/tmp/izzyondroid_14.apk https://apt.izzysoft.de/fdroid/repo/in.sunilpaulmathew.izzyondroid_14.apk 
-    adb install ~/tmp/izzyondroid_14.apk 
-    echo 'GhostCommander Files'
-    curl -L -o ~/tmp/commander_479.apk https://f-droid.org/repo/com.ghostsq.commander_479.apk 
-    adb install ~/tmp/commander_479.apk
-    echo 'Spamblocker Caller'
-    curl -L -o ~/tmp/spamblocker_614.apk https://f-droid.org/repo/dev.kerballone.spamblocker_614.apk 
-    adb install ~/tmp/spamblocker_614.apk
-    echo 'Voice Audiobooks'
-    curl -L -o ~/tmp/audiobook_5406001.apk https://f-droid.org/repo/de.ph1b.audiobook_5406001.apk 
-    adb install ~/tmp/audiobook_5406001.apk 
-    echo 'Wikipedia'
-    curl -L -o ~/tmp/wikipedia_50606.apk https://f-droid.org/repo/org.wikipedia_50606.apk 
-    adb install ~/tmp/wikipedia_50606.apk
-    echo 'Fedilab'
-    curl -L -o ~/tmp/mastodon_570.apk https://f-droid.org/repo/fr.gouv.etalab.mastodon_570.apk 
-    adb install ~/tmp/mastodon_570.apk 
-    echo 'RadioDroid'
-    curl -L -o ~/tmp/radiodroid2_96.apk https://f-droid.org/repo/net.programmierecke.radiodroid2_96.apk 
-    adb install ~/tmp/radiodroid2_96.apk
-    echo 'Sky Map'
-    curl -L -o ~/tmp/stardroid_1751.apk https://f-droid.org/repo/com.google.android.stardroid_1751.apk 
-    adb install ~/tmp/stardroid_1751.apk 
-    echo 'Fossify Messages'
-    curl -L -o ~/tmp/messages_23.apk https://f-droid.org/repo/org.fossify.messages_23.apk 
-    adb install ~/tmp/messages_23.apk
-    echo 'Fossify Gallery'
-    curl -L -o ~/tmp/gallery_28.apk https://f-droid.org/repo/org.fossify.gallery_28.apk 
-    adb install ~/tmp/gallery_28.apk
-    echo 'ntfy'
-    curl -L -o ~/tmp/ntfy.apk https://f-droid.org/repo/io.heckel.ntfy_63.apk
-    adb install ~/tmp/ntfy.apk 
-    echo 'pocketpaint'
-    curl -L -o ~/tmp/pocketpaint.apk https://f-droid.org/repo/org.catrobat.paintroid_54.apk
-    adb install ~/tmp/pocketpaint.apk 
-    echo 'thunderbird'
-    curl -L -o ~/tmp/thunderbird.apk https://f-droid.org/repo/net.thunderbird.android_33.apk
-    adb install ~/tmp/thunderbird.apk 
-    echo 'pipepipe'
-    curl -L -o ~/tmp/pipepipe.apk https://f-droid.org/repo/InfinityLoop1309.NewPipeEnhanced_110904.apk
-    adb install ~/tmp/pipepipe.apk
-    echo 'wifianalyzer'
-    curl -L -o ~/tmp/wifianalyzer.apk https://f-droid.org/repo/com.vrem.wifianalyzer_72.apk
-    adb install ~/tmp/wifianalyzer.apk 
-    echo 'comaps'
-    curl -L -o ~/tmp/comaps.apk https://f-droid.org/repo/app.comaps.fdroid_26100519.apk
-    adb install ~/tmp/comaps.apk 
-    echo 'episteme'
-    curl -L -o ~/tmp/episteme.apk https://f-droid.org/repo/com.aryan.reader.oss_62.apk
-    adb install ~/tmp/episteme.apk 
-    echo 'scrubpony'
-    curl -L -o ~/tmp/scrubpony.apk https://f-droid.org/repo/com.norsehorse.scrubpony_6.apk
-    adb install ~/tmp/scrubpony.apk 
-    echo 'syncthingfork'
-    curl -L -o ~/tmp/syncthingfork.apk https://f-droid.org/repo/com.github.catfriend1.syncthingfork_2010500.apk
-    adb install ~/tmp/syncthingfork.apk 
-    echo 'nora'
-    curl -L -o ~/tmp/nora.apk https://f-droid.org/repo/jp.nonbili.nora_9504.apk
-    adb install ~/tmp/nora.apk 
-    echo 'de1984'
-    curl -L -o ~/tmp/de1984.apk https://apt.izzysoft.de/fdroid/repo/io.github.dorumrr.de1984_53.apk
-    adb install ~/tmp/de1984.apk 
-    echo 'sable'
-    curl -L -o ~/tmp/sable.apk https://apt.izzysoft.de/fdroid/repo/moe.sable.client_20010062.apk
-    adb install ~/tmp/sable.apk 
-    echo 'openscan'
-    curl -L -o ~/tmp/openscan.apk https://apt.izzysoft.de/fdroid/repo/com.ethereal.openscan_2010.apk
-    adb install ~/tmp/openscan.apk 
-    echo 'paperize'
-    curl -L -o ~/tmp/paperize.apk https://apt.izzysoft.de/fdroid/repo/com.anthonyla.paperize_58.apk
-    adb install ~/tmp/paperize.apk 
-    echo 'filemanager'
-    curl -L -o ~/tmp/filemanager.apk https://f-droid.org/repo/org.fossify.filemanager_14.apk
-    adb install ~/tmp/filemanager.apk 
-    echo 'clock'
-    curl -L -o ~/tmp/clock.apk https://f-droid.org/repo/org.fossify.clock_10.apk
-    adb install ~/tmp/clock.apk 
     
 fi
 
