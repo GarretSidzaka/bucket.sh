@@ -449,7 +449,7 @@ echo ""
 if [[ $1 != '-a' ]]; then
   read -n 1 -s -r -p "Press any key to continue, PRESS CONTROL-C TO CANCEL!"
   echo    # (optional) move to a new line
-else
+fi
    for i in "${target_package_list[@]}"; do
       echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
       adb shell pm uninstall -k --user 0 "$i"
@@ -464,10 +464,10 @@ else
       }
    done
 
-fi
+
 if [[ $1 = '-a' ]]; then
   exit 0
-else
+fi
 
 echo "YOU ARE ABOUT TO INSTALL AN ENTIRE PHONE WORTH OF FREE AND OPEN SOURCE APPS.  JUST ONE THING, THIS CAN TAKE QUITE A WHILE, YA AND IM SURE NO ONE IS RATE LIMITING F-DROID... MHM."
 read -p "You can install stuff with adb install on your own time.  Do you want to spend up to an hour downloading apks? (y/n)" -n 1 -r
@@ -593,7 +593,7 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     adb install ~/tmp/clock.apk 
     
 fi
-fi
+
     
 read -p "Reboot android? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
