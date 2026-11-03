@@ -2,6 +2,7 @@
 #BUCKET.SH
 #DISCLAIMER: CANNOT BE HELD LIABLE FOR YOU RUNNING THIS ON YOUR DEVICE AND BRICKING IT.
 target_package_list=(
+com.google.android.apps.bard
 com.google.android.devicelockcontroller
 com.google.android.overlay.devicelockcontroller
 com.google.android.projection.gearhead
