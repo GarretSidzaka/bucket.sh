@@ -626,11 +626,6 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     curl -L -o ~/tmp/de1984.apk https://apt.izzysoft.de/fdroid/repo/io.github.dorumrr.de1984_53.apk
 	fi
     adb install ~/tmp/de1984.apk 
-    echo 'sable'
-	if [[ ! -f ~/tmp/sable.apk ]]; then
-    curl -L -o ~/tmp/sable.apk https://apt.izzysoft.de/fdroid/repo/moe.sable.client_20010062.apk
-	fi
-    adb install ~/tmp/sable.apk 
     echo 'openscan'
 	if [[ ! -f ~/tmp/openscan.apk ]]; then
     curl -L -o ~/tmp/openscan.apk https://apt.izzysoft.de/fdroid/repo/com.ethereal.openscan_2010.apk
