@@ -651,6 +651,30 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     curl -L -o ~/tmp/textpad_63.apk https://f-droid.org/repo/com.maxistar.textpad_63.apk
 	fi
     adb install ~/tmp/textpad_63.apk 
+    echo 'OpenTasker'
+	if [[ ! -f ~/tmp/OpenTasker.apk ]]; then
+    curl -L -o ~/tmp/OpenTasker.apk https://github.com/SysAdminDoc/OpenTasker/releases/download/v0.2.94/OpenTasker-v0.2.94.apk
+	fi
+    adb install ~/tmp/OpenTasker.apk 
+    echo 'obtainum'
+	if [[ ! -f ~/tmp/obtainium.apk ]]; then
+    curl -L -o ~/tmp/obtainum.apk https://github.com/ImranR98/Obtainium/releases/download/v1.7.4/app-release.apk
+	fi
+    adb install ~/tmp/obtainium.apk 
+	echo 'shizukuplus'
+	if [[ ! -f ~/tmp/shizukuplus.apk ]]; then
+    curl -L -o ~/tmp/shizukuplus.apk "https://github.com/thejaustin/ShizukuPlus/releases/download/13.7.0.r3216/Shizuku+-13.7.0.r3216.apk"
+	fi
+    adb install ~/tmp/shizukuplus.apk 
+    echo 'ShizuStore'
+	if [[ ! -f ~/tmp/ShizuStore.apk ]]; then
+    curl -L -o ~/tmp/ShizuStore.apk https://github.com/timschneeb/ShizuStore/releases/download/1.5.0/ShizuStore-1.5.0.apk
+	fi
+    adb install ~/tmp/ShizuStore.apk 
+
+
+
+	
 #github newest verson
 #    echo 'Redreader'
 #    redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
