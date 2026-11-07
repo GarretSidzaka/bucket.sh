@@ -661,11 +661,6 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     curl -L -o ~/tmp/obtainum.apk https://github.com/ImranR98/Obtainium/releases/download/v1.7.4/app-release.apk
 	fi
     adb install ~/tmp/obtainium.apk 
-	echo 'shizukuplus'
-	if [[ ! -f ~/tmp/shizukuplus.apk ]]; then
-    curl -L -o ~/tmp/shizukuplus.apk "https://github.com/thejaustin/ShizukuPlus/releases/download/13.7.0.r3216/Shizuku+-13.7.0.r3216.apk"
-	fi
-    adb install ~/tmp/shizukuplus.apk 
     echo 'ShizuStore'
 	if [[ ! -f ~/tmp/ShizuStore.apk ]]; then
     curl -L -o ~/tmp/ShizuStore.apk https://github.com/timschneeb/ShizuStore/releases/download/1.5.0/ShizuStore-1.5.0.apk
