@@ -443,12 +443,12 @@ exit 1
 }
 
 
-echo 'creating list of pre-installed packages, it\'s called packages.txt'
+echo 'creating list of pre-installed packages, it'\''s called packages.txt'
 touch ./packages.txt
 > ./packages.txt
 adb shell pm list packages | tee ./packages.txt
 echo "=========================================================================="
-printf "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
+printf 'WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN'\''t KnOw WhAt YoUr DoInG!!'
 echo ""
 if [[ $1 != '-a' ]]; then
   read -n 1 -s -r -p "Press any key to continue, PRESS CONTROL-C TO CANCEL!"
@@ -460,7 +460,7 @@ if [[ $1 = '-c' ]]; then
    mapfile -t target_file_package_list < ./targets.txt
 
   
-   for i in "${target_file_package_list[@]}"; do
+   for i in ${target_file_package_list[@]}; do
       echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
       adb shell pm uninstall -k --user 0 "$i"
    done
