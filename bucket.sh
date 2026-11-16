@@ -443,15 +443,32 @@ exit 1
 }
 
 
-echo 'creating list of pre-installed packages'
+echo 'creating list of pre-installed packages, it\'s called packages.txt'
+touch ./packages.txt
+> ./packages.txt
 adb shell pm list packages | tee ./packages.txt
 echo "=========================================================================="
 printf "WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN\'t KnOw WhAt YoUr DoInG!!"
 echo ""
 if [[ $1 != '-a' ]]; then
   read -n 1 -s -r -p "Press any key to continue, PRESS CONTROL-C TO CANCEL!"
-  echo    # (optional) move to a new line
+  echo  ""
 fi
+if [[ $1 = '-c' ]]; then  
+   read -n 1 -s -r -p "Using custom list of packages named targets.txt, PRESS CONTROL-C TO CANCEL!"
+   echo  ""
+   mapfile -t target_file_package_list < ./targets.txt
+
+  
+   for i in "${target_file_package_list[@]}"; do
+      echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
+      adb shell pm uninstall -k --user 0 "$i"
+   done
+
+else
+  
+
+
    for i in "${prebuilt_target_package_list[@]}"; do
       echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
       adb shell pm uninstall -k --user 0 "$i"
@@ -462,7 +479,7 @@ fi
       echo "Uninstalling: ${i}"
       adb shell pm uninstall -k --user 0 "${i}"
    done
-
+fi
 
 if [[ $1 = '-a' ]]; then
   exit 0
@@ -666,7 +683,16 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     curl -L -o ~/tmp/ShizuStore.apk https://github.com/timschneeb/ShizuStore/releases/download/1.5.0/ShizuStore-1.5.0.apk
 	fi
     adb install ~/tmp/ShizuStore.apk 
-
+    echo 'dicio'
+	if [[ ! -f ~/tmp/dicio.apk ]]; then
+    curl -L -o ~/tmp/dicio.apk https://f-droid.org/repo/org.stypox.dicio_19.apk
+	fi
+    adb install ~/tmp/dicio.apk
+    echo 'liseur'
+	if [[ ! -f ~/tmp/liseur.apk ]]; then
+    curl -L -o ~/tmp/liseur.apk https://f-droid.org/repo/com.chmouel.liseur_67_394e041.apk
+	fi
+    adb install ~/tmp/liseur.apk 
 
 
 	
