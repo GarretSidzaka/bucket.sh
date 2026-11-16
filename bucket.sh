@@ -457,8 +457,12 @@ fi
 if [[ $1 = '-c' ]]; then  
    read -n 1 -s -r -p "Using custom list of packages named targets.txt, PRESS CONTROL-C TO CANCEL!"
    echo  ""
+   { #try
    mapfile -t target_file_package_list < ./targets.txt
-
+   } || { # catch
+echo "targets.txt was not mapped, exiting"
+exit 1
+}
   
    for i in "${target_file_package_list[@]}"; do
       echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
