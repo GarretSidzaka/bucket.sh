@@ -445,7 +445,7 @@ exit 1
 
 echo 'creating list of pre-installed packages, it'\''s called packages.txt'
 touch ./packages.txt
-> ./packages.txt
+: > ./packages.txt
 adb shell pm list packages | tee ./packages.txt
 echo "=========================================================================="
 printf 'WaRnInG: tHiS mIgHt BrEaK yOuR dEvIcE iF yOu DoN'\''t KnOw WhAt YoUr DoInG!!'
