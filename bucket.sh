@@ -460,7 +460,7 @@ if [[ $1 = '-c' ]]; then
    mapfile -t target_file_package_list < ./targets.txt
 
   
-   for i in ${target_file_package_list[@]}; do
+   for i in "${target_file_package_list[@]}"; do
       echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
       adb shell pm uninstall -k --user 0 "$i"
    done
