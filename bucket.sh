@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #BUCKET.SH
 #DISCLAIMER: CANNOT BE HELD LIABLE FOR YOU RUNNING THIS ON YOUR DEVICE AND BRICKING IT.
-target_package_list=(
+prebuilt_target_package_list=(
 com.google.android.apps.bard
 com.google.android.apps.adm
 com.google.android.devicelockcontroller
@@ -452,7 +452,7 @@ if [[ $1 != '-a' ]]; then
   read -n 1 -s -r -p "Press any key to continue, PRESS CONTROL-C TO CANCEL!"
   echo    # (optional) move to a new line
 fi
-   for i in "${target_package_list[@]}"; do
+   for i in "${prebuilt_target_package_list[@]}"; do
       echo -e "EXECUTING: adb shell pm uninstall -k --user 0 $i \nOUTPUT:"
       adb shell pm uninstall -k --user 0 "$i"
    done
