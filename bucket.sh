@@ -693,9 +693,61 @@ echo "INSTALLING EXPANDED FOSS APPS....."
     curl -L -o ~/tmp/liseur.apk https://f-droid.org/repo/com.chmouel.liseur_67_394e041.apk
 	fi
     adb install ~/tmp/liseur.apk 
+    echo 'Installing spacetraderclassic.'
+	if [[ ! -f ~/tmp/spacetraderclassic.apk ]]; then
+    curl -o ~/tmp/spacetraderclassic.apk https://f-droid.org/repo/io.github.lunchwine.spacetraderclassic_905.apk
+	fi
+    adb install ~/tmp/spacetraderclassic.apk
+     echo 'Installing unciv.'
+	if [[ ! -f ~/tmp/unciv.apk ]]; then
+    curl -o ~/tmp/unciv.apk https://f-droid.org/repo/com.unciv.app_1284.apk
+	fi
+    adb install ~/tmp/unciv.apk
+      echo 'Installing freedoom.'
+	if [[ ! -f ~/tmp/freedoom.apk ]]; then
+    curl -o ~/tmp/freedoom.apk https://f-droid.org/repo/net.nullsum.freedoom_20.apk
+	fi
+    adb install ~/tmp/freedoom.apk
+      echo 'Installing idlefantasy.'
+	if [[ ! -f ~/tmp/idlefantasy.apk ]]; then
+    curl -o ~/tmp/idlefantasy.apk https://f-droid.org/repo/com.tristinbaker.idlefantasy_160000.apk
+	fi
+    adb install ~/tmp/idlefantasy.apk
+      echo 'Installing hyperroid.'
+	if [[ ! -f ~/tmp/hyperroid.apk ]]; then
+    curl -o ~/tmp/hyperroid.apk https://f-droid.org/repo/com.roguetemple.hyperroid_13116.apk
+	fi
+    adb install ~/tmp/hyperroid.apk
+      echo 'Installing sudoku.'
+	if [[ ! -f ~/tmp/sudoku.apk ]]; then
+    curl -o ~/tmp/sudoku.apk https://f-droid.org/repo/com.likhithpraveenk.sudoku_73.apk
+	fi
+    adb install ~/tmp/sudoku.apk
+      echo 'Installing chess.'
+	if [[ ! -f ~/tmp/chess.apk ]]; then
+    curl -o ~/tmp/chess.apk https://f-droid.org/repo/jwtc.android.chess_313.apk
+	fi
+    adb install ~/tmp/chess.apk
+      echo 'Installing bubble penetration'
+	if [[ ! -f ~/tmp/bubble.apk ]]; then
+    curl -o ~/tmp/bubble.apk https://f-droid.org/repo/org.codeberg.scovillo.bubble_5.apk
+	fi
+    adb install ~/tmp/bubble.apk
+      echo 'Installing regexcrossword.'
+	if [[ ! -f ~/tmp/regexcrossword.apk ]]; then
+    curl -o ~/tmp/regexcrossword.apk https://f-droid.org/repo/io.github.cuso4deposit.regexcrossword_5.apk
+	fi
+    adb install ~/tmp/regexcrossword.apk
+      echo 'Installing lemuroid.'
+	if [[ ! -f ~/tmp/lemuroid.apk ]]; then
+    curl -o ~/tmp/lemuroid.apk https://f-droid.org/repo/com.swordfish.lemuroid_252.apk
+	fi
+    adb install ~/tmp/lemuroid.apk
+  
+ 
 
 
-	
+
 #github newest verson
 #    echo 'Redreader'
 #    redreaderversion="$(curl -s https://api.github.com/repos/QuantumBadger/RedReader/releases/latest | grep browser_download_url | cut -d '"' -f 4 | cut -d '/' -f 8)"
